@@ -1,5 +1,6 @@
 const describeOptionalProp = require('../DescribeOptionalProp');
 const describeIfiProp = require('../DescribeIfiProp');
+const itsInvalid = require('../ItsInvalid');
 const {
   string,
   mailto,
@@ -15,4 +16,14 @@ module.exports = test => {
   describeIfiProp('mbox_sha1sum', sha1, test);
   describeIfiProp('openid', iri, test);
   describeIfiProp('account', account, test);
+  itsInvalid({
+    objectType: 'Agent',
+    name: 'Test',
+  }, 'missing an IFI', test);
+  itsInvalid({
+    objectType: 'Agent',
+    name: 'Test',
+    mbox: 'mailto:test@example.com',
+    openid: 'http://www.example.com',
+  }, 'containing too many IFIs', test);
 };
