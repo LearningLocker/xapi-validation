@@ -5,7 +5,7 @@ module.exports = (prop, describer, validData, test) =>
     it(`should return an error when missing ${prop}`, () =>
       test(omit(validData, prop), false)
     );
-    describer((value, valid) => {
-      test(Object.assign({}, validData, { [prop]: value }), valid);
-    });
+    describer((value, valid) =>
+      test(Object.assign({}, validData, { [prop]: value }), valid)
+    );
   });
