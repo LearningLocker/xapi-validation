@@ -1,6 +1,5 @@
-const itsRequired = require('../ItsRequired');
-const itsOptional = require('../itsOptional');
-const describeCollection = require('../DescribeCollection');
+const describeRequiredProp = require('../DescribeRequiredProp');
+const describeOptionalProp = require('../DescribeOptionalProp');
 const statementRules = require('../Helpers/StatementRules');
 const {
   actor,
@@ -13,19 +12,12 @@ const {
 } = require('../Factory');
 
 module.exports = test => {
-  itsRequired('actor', {}, test);
-  itsRequired('verb', {}, test);
-  itsRequired('object', {}, test);
-  itsOptional('result', {}, test);
-  itsOptional('context', {}, test);
-  itsOptional('timestamp', {}, test);
-  itsOptional('attachments', {}, test);
-  describeProp('actor', actor, test);
-  describeProp('object', object, test);
-  describeProp('verb', verb, test);
-  describeProp('result', result, test);
-  describeProp('context', context, test);
-  describeProp('timestamp', timestamp, test);
-  describeProp('attachments', attachments, test);
+  describeRequiredProp('actor', actor, {}, test);
+  describeRequiredProp('object', object, {}, test);
+  describeRequiredProp('verb', verb, {}, test);
+  describeOptionalProp('result', result, {}, test);
+  describeOptionalProp('context', context, {}, test);
+  describeOptionalProp('timestamp', timestamp, {}, test);
+  describeOptionalProp('attachments', attachments, {}, test);
   statementRules(test)
 };
