@@ -1,0 +1,14 @@
+{
+  "name": "xapi-validation",
+  "version": "1.0.0",
+  "description": "Validation library for the xAPI.",
+  "main": "src/index.js",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
+  }
+}
