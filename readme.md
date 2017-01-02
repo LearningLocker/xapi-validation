@@ -1,5 +1,5 @@
 # xapi-validation
-A package for validating xAPI Statements.
+> A package for validating xAPI Statements.
 
 [![Build Status](https://travis-ci.org/ryansmith94/xapi-validation.svg?branch=master)](https://travis-ci.org/ryansmith94/xapi-validation)
 [![Dependencies](https://david-dm.org/ryansmith94/xapi-validation.svg)](https://david-dm.org/ryansmith94/xapi-validation)
