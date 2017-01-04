@@ -10,7 +10,6 @@
   "devDependencies": {
     "assert": "^1.4.1",
     "mocha": "^3.2.0",
-    "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
   },
   "dependencies": {
     "lodash": "^4.17.4",
