@@ -1,5 +1,6 @@
 const describeOptionalProp = require('../DescribeOptionalProp');
-const { activities } = require('../Factory');
+const collection = require('../Helpers/Collection');
+const { activity } = require('../Factory');
 
 const validData = {
   parent: [],
@@ -7,6 +8,8 @@ const validData = {
   grouping: [],
   other: [],
 };
+
+const activities = collection(activity);
 
 module.exports = test => {
   describeOptionalProp('parent', activities, validData, test);

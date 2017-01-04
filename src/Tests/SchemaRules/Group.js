@@ -1,6 +1,7 @@
 const describeOptionalProp = require('../DescribeOptionalProp');
 const itsInvalid = require('../ItsInvalid');
 const agentSchema = require('../Helpers/AgentSchema');
+const { actor } = require('../Factory');
 
 module.exports = test => {
   itsInvalid({
@@ -13,8 +14,8 @@ module.exports = test => {
       test({
         objectType: 'Group',
         name: 'Test',
-        mbox: 'mailto:test@example.com'
-        member: [value]
+        mbox: 'mailto:test@example.com',
+        member: [value],
       }, valid)
     );
   });

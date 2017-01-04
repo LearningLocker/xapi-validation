@@ -1,6 +1,7 @@
 const describeRequiredProp = require('../DescribeRequiredProp');
 const describeOptionalProp = require('../DescribeOptionalProp');
 const statementRules = require('../Helpers/StatementRules');
+const collection = require('../Helpers/Collection');
 const {
   actor,
   object,
@@ -8,8 +9,10 @@ const {
   result,
   context,
   timestamp,
-  attachments,
+  attachment,
 } = require('../Factory');
+
+const attachments = collection(attachment);
 
 module.exports = test => {
   describeRequiredProp('actor', actor, {}, test);
