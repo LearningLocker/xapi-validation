@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Validation library for the xAPI.",
   "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha src/**.test.js",
+    "test-watch": "./node_modules/mocha/bin/mocha src/**.test.js --watch"
+  },
   "devDependencies": {
     "assert": "^1.4.1",
     "mocha": "^3.2.0",
