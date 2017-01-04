@@ -1,8 +1,8 @@
 const assert = require('assert');
 const validateStatement = require('./index');
-const { describeStatement } = require('./Tests/Factory');
+const { statement } = require('./Tests/Factory');
 
-describeStatement('statement', (statement, valid) => {
+statement('statement', (statement, valid) => {
   const warnings = validateStatement(statement);
   assert.isArray(result, 'result of validation is not an array');
   if (valid === true) {

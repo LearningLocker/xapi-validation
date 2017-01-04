@@ -33,6 +33,6 @@ module.exports = test => {
   describeOptionalProp('authority', authority, validData, test);
   describeOptionalProp('version', version, validData, test);
   statementSchema((data, valid) =>
-    test(Object.assign({}, validData, data), valid);
-  )
+    test(Object.assign({}, validData, data), valid)
+  );
 };
