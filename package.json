@@ -2,17 +2,45 @@
   "name": "xapi-validation",
   "version": "1.0.0",
   "description": "Validation library for the xAPI.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha src/**.test.js",
-    "test-watch": "./node_modules/mocha/bin/mocha src/**.test.js --watch"
-  },
-  "devDependencies": {
-    "assert": "^1.4.1",
-    "mocha": "^3.2.0",
+    "test": "./node_modules/mocha/bin/mocha dist/**/*.test.js",
+    "test-watch": "./node_modules/mocha/bin/mocha dist/**/*.test.js --watch",
+    "cover": "./node_modules/mocha/bin/mocha dist/**/*.test.js --require blanket --reporter mocha-lcov-reporter > coverage/coverage.lcov",
+    "codecov": "./node_modules/codecov/bin/codecov",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "lint": "./node_modules/tslint/bin/tslint --project ./tsconfig.json -c ./tslint.json",
+    "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit=1",
+    "duplication": "./node_modules/jscpd/bin/jscpd",
+    "typings": "node ./node_modules/typings/dist/bin.js install"
   },
   "dependencies": {
     "lodash": "^4.17.4",
     "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "blanket": "1.1.9",
+    "codecov": "^1.0.1",
+    "jscpd": "^0.6.6",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
+    "tslint": "^4.2.0",
+    "typescript": "^2.1.4",
+    "typings": "^2.1.0"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "dist"
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "dist/**/*.test.js"
+      ],
+      "data-cover-ecmaVersion": "6"
+    }
   }
 }

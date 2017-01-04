@@ -1,0 +1,20 @@
+"use strict";
+var DescribeInteractionProp_1 = require("../DescribeInteractionProp");
+var DescribeOptionalProp_1 = require("../DescribeOptionalProp");
+var Factory_1 = require("../Factory");
+var validData = {};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = function (test) {
+    DescribeOptionalProp_1.default('name', Factory_1.languageMap, validData, test);
+    DescribeOptionalProp_1.default('description', Factory_1.languageMap, validData, test);
+    DescribeOptionalProp_1.default('type', Factory_1.iri, validData, test);
+    DescribeOptionalProp_1.default('moreInfo', Factory_1.iri, validData, test);
+    DescribeOptionalProp_1.default('extensions', Factory_1.extensions, validData, test);
+    DescribeOptionalProp_1.default('interactionType', Factory_1.interactionType, validData, test);
+    DescribeOptionalProp_1.default('correctResponsePattern', Factory_1.string, validData, test);
+    DescribeInteractionProp_1.default(['choices'], 'choice', test);
+    DescribeInteractionProp_1.default(['choices'], 'sequencing', test);
+    DescribeInteractionProp_1.default(['scale'], 'likert', test);
+    DescribeInteractionProp_1.default(['source', 'target'], 'matching', test);
+    DescribeInteractionProp_1.default(['steps'], 'performance', test);
+};

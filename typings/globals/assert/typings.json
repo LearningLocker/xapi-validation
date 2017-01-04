@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/34ad2b8bb844fe993b94130111c74067b8a86bdf/assert/assert.d.ts",
+    "raw": "registry:dt/assert#0.0.0+20161116022913",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/34ad2b8bb844fe993b94130111c74067b8a86bdf/assert/assert.d.ts"
+  }
+}
