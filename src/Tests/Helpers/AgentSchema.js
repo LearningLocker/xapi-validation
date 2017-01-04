@@ -9,9 +9,12 @@ const {
   account,
 } = require('../Factory');
 
+const validData = {
+  mbox: 'mailto:test@example.com',
+};
+
 module.exports = test => {
-  describeOptionalProp('objectType', string, {}, test);
-  describeOptionalProp('name', string, {}, test);
+  describeOptionalProp('name', string, validData, test);
   describeIfiProp('mbox', mailto, test);
   describeIfiProp('mbox_sha1sum', sha1, test);
   describeIfiProp('openid', iri, test);

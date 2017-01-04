@@ -1,10 +1,10 @@
+const describeRequiredProp = require('../DescribeRequiredProp');
 const describeOptionalProp = require('../DescribeOptionalProp');
 const itsInvalid = require('../ItsInvalid');
 const statementSchema = require('../Helpers/StatementSchema');
-const { string } = require('../Factory');
+const { string, subStatementObject } = require('../Factory');
 
 const validData = {
-  objectType: 'SubStatement';
   actor: {
     objectType: 'Agent',
     mbox: 'mailto:test@example.com',
@@ -16,14 +16,9 @@ const validData = {
     objectType: 'Activity',
     id: 'http://www.example.com',
   },
-  result: {},
-  context: {},
-  timestamp: '2016-12-31T18:45:21+00:00',
-  attachments: [],
 };
 
 module.exports = test => {
-  describeOptionalProp('objectType', string, validData, test);
   itsInvalid(Object.assign({}, validData, {
     object: {
       objectType: 'SubStatement',
@@ -40,7 +35,8 @@ module.exports = test => {
       },
     },
   }), 'object is a SubStatement', test);
+  describeRequiredProp('object', subStatementObject, validData, test);
   statementSchema((data, valid) =>
-    test(Object.assign({}, validData, data), valid);
+    test(Object.assign({}, validData, data), valid)
   )
 };

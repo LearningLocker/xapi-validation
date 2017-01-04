@@ -1,7 +1,7 @@
 const describeOptionalProp = require('../DescribeOptionalProp');
 const itsInvalid = require('../ItsInvalid');
 const agentSchema = require('../Helpers/AgentSchema');
-const { actor } = require('../Factory');
+const { agent } = require('../Factory');
 
 module.exports = test => {
   itsInvalid({
@@ -10,7 +10,7 @@ module.exports = test => {
     member: [],
   }, 'contains no members', test);
   describe('member', () => {
-    actor((value, valid) =>
+    agent((value, valid) =>
       test({
         objectType: 'Group',
         name: 'Test',

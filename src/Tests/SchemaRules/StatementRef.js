@@ -8,6 +8,5 @@ const validData = {
 };
 
 module.exports = test => {
-  describeOptionalProp('objectType', string, validData, test);
   describeRequiredProp('id', uuid, validData, test);
 };

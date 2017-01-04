@@ -22,4 +22,4 @@ module.exports = restrictToSchema({
   response: optional(string),
   duration: optional(duration),
   extensions: optional(extensions),
-})
+});

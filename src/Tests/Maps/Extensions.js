@@ -7,7 +7,7 @@ const validData = {
 
 module.exports = test => {
   itsInvalid({
-    'http:': 'test'
+    'http': 'test'
   }, 'containing invalid keys', test);
   itsValid(validData, test);
 };

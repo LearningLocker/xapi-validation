@@ -34,6 +34,7 @@ module.exports = {
   statementRef: requireTest('./SchemaRules/StatementRef'),
   string: requireTest('./Values/String'),
   subStatement: requireTest('./SchemaRules/SubStatement'),
+  subStatementObject: requireTest('./SchemaRules/SubStatementObject'),
   timestamp: requireTest('./RegexValues/Timestamp'),
   uuid: requireTest('./RegexValues/Uuid'),
   verb: requireTest('./SchemaRules/Verb'),

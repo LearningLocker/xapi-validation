@@ -2,10 +2,11 @@ const {
   pathString,
   first,
   checkType,
+  checkTypeWarning,
 } = require('rulr');
 
 const checkNumber = (type, checker) => first(checkType(Number), (data, path) =>
-  checker(data) ? [] : [typeError('Integer')(data)(path)]
+  checker(data) ? [] : [checkTypeWarning(type)(data)(path)]
 );
 
 exports.any = () => [];
