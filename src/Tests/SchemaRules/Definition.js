@@ -19,12 +19,11 @@ module.exports = test => {
   describeOptionalProp('interactionType', interactionType, validData, test);
   describeOptionalProp('correctResponsePattern', string, validData, test);
 
-  // describeInteractionProp('choice', 'choice', test);
-  // describeInteractionProp('choices', 'sequencing', test);
-  // describeInteractionProp('scale', 'likert', test);
-  // describeInteractionProp('source', 'matching', test);
-  // describeInteractionProp('target', 'matching', test);
-  // describeInteractionProp('steps', 'performance', test);
+  describeInteractionProp(['choices'], 'choice', test);
+  describeInteractionProp(['choices'], 'sequencing', test);
+  describeInteractionProp(['scale'], 'likert', test);
+  describeInteractionProp(['source', 'target'], 'matching', test);
+  describeInteractionProp(['steps'], 'performance', test);
 
   // invalidComponentsError
 };

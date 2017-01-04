@@ -57,7 +57,7 @@ module.exports = composeRules([
   (data, path) => {
     if (data == null || data.constructor !== Object) return [];
     const interactionType = data.interactionType;
-    const unsupportedComponents = getUnsupportedComponents(data);
+    const unsupportedComponents = getUnsupportedComponents(interactionType);
     const invalidComponents = unsupportedComponents.filter(
       component => data[component] !== undefined
     );
