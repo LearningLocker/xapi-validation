@@ -3,7 +3,7 @@ const values = require('./Values');
 const requireFile = file => ruleAccessor => (data, path) =>
   ruleAccessor(require(file))(data, path);
 
-const requireMap = requireFile('./maps');
+const requireMap = requireFile('./Maps');
 const requireRule = file => requireFile(file)(rule => rule);
 
 module.exports = {
