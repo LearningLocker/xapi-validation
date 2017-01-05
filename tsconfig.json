@@ -19,8 +19,7 @@
     "alwaysStrict": true
   },
   "filesGlob": [
-    "src/**/*.ts",
-    "typings/index.d.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
@@ -111,8 +110,7 @@
     "src/Tests/Values/Number.ts",
     "src/Tests/Values/Scaled.ts",
     "src/Tests/Values/String.ts",
-    "src/Values.ts",
-    "typings/index.d.ts"
+    "src/Values.ts"
   ],
   "atom": {
     "rewriteTsconfig": true

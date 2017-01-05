@@ -1,8 +1,0 @@
-{
-  "globalDependencies": {
-    "mocha": "registry:dt/mocha#2.2.5+20161221010438"
-  },
-  "dependencies": {
-    "lodash": "registry:npm/lodash#4.0.0+20161015015725"
-  }
-}

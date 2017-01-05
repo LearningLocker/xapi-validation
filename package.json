@@ -13,14 +13,15 @@
     "build-watch": "tsc --watch",
     "lint": "./node_modules/tslint/bin/tslint --project ./tsconfig.json -c ./tslint.json",
     "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit=1",
-    "duplication": "./node_modules/jscpd/bin/jscpd",
-    "typings": "node ./node_modules/typings/dist/bin.js install"
+    "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "dependencies": {
     "lodash": "^4.17.4",
     "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.45",
+    "@types/mocha": "^2.2.35",
     "@types/node": "^6.0.57",
     "assert": "^1.4.1",
     "blanket": "1.1.9",
@@ -29,8 +30,7 @@
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "tslint": "^4.2.0",
-    "typescript": "^2.1.4",
-    "typings": "^2.1.0"
+    "typescript": "^2.1.4"
   },
   "config": {
     "blanket": {
