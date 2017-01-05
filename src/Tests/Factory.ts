@@ -13,7 +13,6 @@ export const contextActivities = requireTest('./SchemaRules/ContextActivities');
 export const definition = requireTest('./SchemaRules/Definition');
 export const duration = requireTest('./RegexValues/Duration');
 export const extensions = requireTest('./Maps/extensions');
-export const float = requireTest('./Values/Float');
 export const group = requireTest('./SchemaRules/Group');
 export const imt = requireTest('./RegexValues/Imt');
 export const integer = requireTest('./Values/Integer');

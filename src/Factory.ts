@@ -18,7 +18,6 @@ export const context = requireRule('./SchemaRules/Context');
 export const definition = requireRule('./SchemaRules/Definition');
 export const duration = requireRule('./RegexValues/Duration');
 export const extensions = requireMap(maps => maps.extensions);
-export const float = values.float;
 export const group = requireRule('./SchemaRules/Group');
 export const imt = requireRule('./RegexValues/Imt');
 export const integer = values.integer;

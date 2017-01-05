@@ -21,6 +21,7 @@
     "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
   },
   "devDependencies": {
+    "@types/node": "^6.0.57",
     "assert": "^1.4.1",
     "blanket": "1.1.9",
     "codecov": "^1.0.1",

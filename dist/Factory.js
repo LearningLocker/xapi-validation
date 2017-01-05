@@ -17,7 +17,6 @@ exports.context = requireRule('./SchemaRules/Context');
 exports.definition = requireRule('./SchemaRules/Definition');
 exports.duration = requireRule('./RegexValues/Duration');
 exports.extensions = requireMap(function (maps) { return maps.extensions; });
-exports.float = values.float;
 exports.group = requireRule('./SchemaRules/Group');
 exports.imt = requireRule('./RegexValues/Imt');
 exports.integer = values.integer;

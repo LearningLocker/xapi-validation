@@ -10,7 +10,6 @@ export declare const context: (data: any, path: any) => any;
 export declare const definition: (data: any, path: any) => any;
 export declare const duration: (data: any, path: any) => any;
 export declare const extensions: (data: any, path: any) => any;
-export declare const float: any;
 export declare const group: (data: any, path: any) => any;
 export declare const imt: (data: any, path: any) => any;
 export declare const integer: any;

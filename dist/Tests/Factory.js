@@ -14,7 +14,6 @@ exports.contextActivities = requireTest('./SchemaRules/ContextActivities');
 exports.definition = requireTest('./SchemaRules/Definition');
 exports.duration = requireTest('./RegexValues/Duration');
 exports.extensions = requireTest('./Maps/extensions');
-exports.float = requireTest('./Values/Float');
 exports.group = requireTest('./SchemaRules/Group');
 exports.imt = requireTest('./RegexValues/Imt');
 exports.integer = requireTest('./Values/Integer');
