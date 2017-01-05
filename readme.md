@@ -1,13 +1,13 @@
 # xapi-validation
 > A package for validating xAPI Statements.
 
-[![Build Status](https://travis-ci.org/ryansmith94/xapi-validation.svg?branch=master)](https://travis-ci.org/ryansmith94/xapi-validation)
-[![Dependencies](https://david-dm.org/ryansmith94/xapi-validation.svg)](https://david-dm.org/ryansmith94/xapi-validation)
-[![Dev Dependencies](https://david-dm.org/ryansmith94/xapi-validation/dev-status.svg)](https://david-dm.org/ryansmith94/xapi-validation?type=dev)
-[![Test Coverage](https://codecov.io/gh/ryansmith94/xapi-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/ryansmith94/xapi-validation)
+[![Build Status](https://travis-ci.org/LearningLocker/xapi-validation.svg?branch=master)](https://travis-ci.org/LearningLocker/xapi-validation)
+[![Dependencies](https://david-dm.org/LearningLocker/xapi-validation.svg)](https://david-dm.org/LearningLocker/xapi-validation)
+[![Dev Dependencies](https://david-dm.org/LearningLocker/xapi-validation/dev-status.svg)](https://david-dm.org/LearningLocker/xapi-validation?type=dev)
+[![Test Coverage](https://codecov.io/gh/LearningLocker/xapi-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/LearningLocker/xapi-validation)
 
 ```js
-npm install --save git+https://git@github.com/ryansmith94/xapi-validation.git
+npm install --save git+https://git@github.com/LearningLocker/xapi-validation.git
 ```
 
 ## Why?
