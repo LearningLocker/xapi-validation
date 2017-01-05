@@ -1,4 +1,4 @@
-const values = require('./values');
+const values = require('./Values');
 
 const requireFile = file => ruleAccessor => (data, path) =>
   ruleAccessor(require(file))(data, path);
