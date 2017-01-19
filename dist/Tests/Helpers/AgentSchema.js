@@ -8,7 +8,7 @@ var validData = {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
-    DescribeOptionalProp_1.default('name', Factory_1.string, validData, test);
+    DescribeOptionalProp_1.default('name', Factory_1.stringValue, validData, test);
     DescribeIfiProp_1.default('mbox', Factory_1.mailto, test);
     DescribeIfiProp_1.default('mbox_sha1sum', Factory_1.sha1, test);
     DescribeIfiProp_1.default('openid', Factory_1.iri, test);

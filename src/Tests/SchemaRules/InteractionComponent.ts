@@ -1,7 +1,7 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
-import { string, languageMap } from '../Factory';
+import { stringValue, languageMap } from '../Factory';
 
 const validData = {
   id: 'test',
@@ -9,6 +9,6 @@ const validData = {
 };
 
 export default (test: Test) => {
-  describeRequiredProp('id', string, validData, test);
+  describeRequiredProp('id', stringValue, validData, test);
   describeOptionalProp('description', languageMap, validData, test);
 };

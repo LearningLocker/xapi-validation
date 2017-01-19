@@ -5,7 +5,7 @@ import {
   actor,
   group,
   contextActivities,
-  string,
+  stringValue,
   language,
   statementRef,
   extensions,
@@ -37,8 +37,8 @@ export default (test: Test) => {
   describeOptionalProp('instructor', actor, validData, test);
   describeOptionalProp('team', group, validData, test);
   describeOptionalProp('contextActivities', contextActivities, validData, test);
-  describeOptionalProp('revision', string, validData, test);
-  describeOptionalProp('platform', string, validData, test);
+  describeOptionalProp('revision', stringValue, validData, test);
+  describeOptionalProp('platform', stringValue, validData, test);
   describeOptionalProp('language', language, validData, test);
   describeOptionalProp('statement', statementRef, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);

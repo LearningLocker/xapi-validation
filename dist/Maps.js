@@ -6,5 +6,5 @@ var map = function (keyRule, valueRule) { return function (data, path) {
         return warnings.concat(keyRule(key, path)).concat(valueRule(data[key], path.concat(key)));
     }, []);
 }; };
-exports.extensions = map(Factory_1.iri, Factory_1.any);
-exports.languageMap = map(Factory_1.language, Factory_1.string);
+exports.extensions = map(Factory_1.iri, Factory_1.anyValue);
+exports.languageMap = map(Factory_1.language, Factory_1.stringValue);

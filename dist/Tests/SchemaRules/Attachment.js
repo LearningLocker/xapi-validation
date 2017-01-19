@@ -17,7 +17,7 @@ exports.default = function (test) {
     DescribeRequiredProp_1.default('display', Factory_1.languageMap, validData, test);
     DescribeOptionalProp_1.default('description', Factory_1.languageMap, validData, test);
     DescribeRequiredProp_1.default('contentType', Factory_1.imt, validData, test);
-    DescribeRequiredProp_1.default('length', Factory_1.integer, validData, test);
-    DescribeRequiredProp_1.default('sha2', Factory_1.string, validData, test);
+    DescribeRequiredProp_1.default('length', Factory_1.integerValue, validData, test);
+    DescribeRequiredProp_1.default('sha2', Factory_1.stringValue, validData, test);
     DescribeOptionalProp_1.default('fileUrl', Factory_1.iri, validData, test);
 };

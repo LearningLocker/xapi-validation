@@ -2,8 +2,8 @@ import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import {
   score,
-  boolean,
-  string,
+  booleanValue,
+  stringValue,
   duration,
   extensions,
 } from '../Factory';
@@ -19,9 +19,9 @@ const validData = {
 
 export default (test: Test) => {
   describeOptionalProp('score', score, validData, test);
-  describeOptionalProp('success', boolean, validData, test);
-  describeOptionalProp('completion', boolean, validData, test);
-  describeOptionalProp('response', string, validData, test);
+  describeOptionalProp('success', booleanValue, validData, test);
+  describeOptionalProp('completion', booleanValue, validData, test);
+  describeOptionalProp('response', stringValue, validData, test);
   describeOptionalProp('duration', duration, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);
 };

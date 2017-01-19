@@ -1,7 +1,7 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
-import { iri, string, definition } from '../Factory';
+import { iri, definition } from '../Factory';
 
 const validData = {
   objectType: 'Activity',

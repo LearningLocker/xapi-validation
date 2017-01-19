@@ -3,7 +3,7 @@ import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import itsInvalid from '../ItsInvalid';
 import statementSchema from '../Helpers/StatementSchema';
-import { string, subStatementObject } from '../Factory';
+import { subStatementObject } from '../Factory';
 
 const validData = {
   actor: {

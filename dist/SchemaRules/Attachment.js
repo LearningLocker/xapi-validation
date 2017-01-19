@@ -7,7 +7,7 @@ exports.default = rulr_1.restrictToSchema({
     display: rulr_1.required(Factory_1.languageMap),
     description: rulr_1.optional(Factory_1.languageMap),
     contentType: rulr_1.required(Factory_1.imt),
-    length: rulr_1.required(Factory_1.integer),
-    sha2: rulr_1.required(Factory_1.string),
+    length: rulr_1.required(Factory_1.integerValue),
+    sha2: rulr_1.required(Factory_1.stringValue),
     fileUrl: rulr_1.optional(Factory_1.iri),
 });

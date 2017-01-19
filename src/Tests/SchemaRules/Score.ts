@@ -1,6 +1,6 @@
 import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
-import { scaled, number } from '../Factory';
+import { scaledValue, numberValue } from '../Factory';
 
 const validData = {
   scaled: 0,
@@ -10,8 +10,8 @@ const validData = {
 };
 
 export default (test: Test) => {
-  describeOptionalProp('scaled', scaled, validData, test);
-  describeOptionalProp('raw', number, validData, test);
-  describeOptionalProp('min', number, validData, test);
-  describeOptionalProp('max', number, validData, test);
+  describeOptionalProp('scaled', scaledValue, validData, test);
+  describeOptionalProp('raw', numberValue, validData, test);
+  describeOptionalProp('min', numberValue, validData, test);
+  describeOptionalProp('max', numberValue, validData, test);
 };

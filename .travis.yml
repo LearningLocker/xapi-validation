@@ -1,3 +1,10 @@
 language: node_js
 node_js: node
 sudo: false
+script:
+  - npm test
+  - npm run build
+  - mkdir coverage
+  - npm run cover
+  - npm run codecov
+  - npm run lint

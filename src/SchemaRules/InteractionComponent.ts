@@ -1,7 +1,7 @@
 import { restrictToSchema, optional, required } from 'rulr';
-import { string, languageMap } from '../Factory';
+import { stringValue, languageMap } from '../Factory';
 
 export default restrictToSchema({
-  id: required(string),
+  id: required(stringValue),
   description: optional(languageMap),
 });

@@ -1,7 +1,7 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
-import { string, uuid } from '../Factory';
+import { uuid } from '../Factory';
 
 const validData = {
   objectType: 'StatementRef',

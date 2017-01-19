@@ -3,7 +3,7 @@ import describeOptionalProp from '../DescribeOptionalProp';
 import describeIfiProp from '../DescribeIfiProp';
 import itsInvalid from '../ItsInvalid';
 import {
-  string,
+  stringValue,
   mailto,
   sha1,
   iri,
@@ -15,7 +15,7 @@ const validData = {
 };
 
 export default (test: Test) => {
-  describeOptionalProp('name', string, validData, test);
+  describeOptionalProp('name', stringValue, validData, test);
   describeIfiProp('mbox', mailto, test);
   describeIfiProp('mbox_sha1sum', sha1, test);
   describeIfiProp('openid', iri, test);

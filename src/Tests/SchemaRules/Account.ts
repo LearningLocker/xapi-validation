@@ -1,6 +1,6 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
-import { iri, string } from '../Factory';
+import { iri, stringValue } from '../Factory';
 
 const validData = {
   homePage: 'http://www.example.com',
@@ -9,5 +9,5 @@ const validData = {
 
 export default (test: Test) => {
   describeRequiredProp('homePage', iri, validData, test);
-  describeRequiredProp('name', string, validData, test);
+  describeRequiredProp('name', stringValue, validData, test);
 };

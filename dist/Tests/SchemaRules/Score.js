@@ -9,8 +9,8 @@ var validData = {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
-    DescribeOptionalProp_1.default('scaled', Factory_1.scaled, validData, test);
-    DescribeOptionalProp_1.default('raw', Factory_1.number, validData, test);
-    DescribeOptionalProp_1.default('min', Factory_1.number, validData, test);
-    DescribeOptionalProp_1.default('max', Factory_1.number, validData, test);
+    DescribeOptionalProp_1.default('scaled', Factory_1.scaledValue, validData, test);
+    DescribeOptionalProp_1.default('raw', Factory_1.numberValue, validData, test);
+    DescribeOptionalProp_1.default('min', Factory_1.numberValue, validData, test);
+    DescribeOptionalProp_1.default('max', Factory_1.numberValue, validData, test);
 };

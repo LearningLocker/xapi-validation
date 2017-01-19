@@ -11,7 +11,7 @@ exports.default = function (test) {
     DescribeOptionalProp_1.default('moreInfo', Factory_1.iri, validData, test);
     DescribeOptionalProp_1.default('extensions', Factory_1.extensions, validData, test);
     DescribeOptionalProp_1.default('interactionType', Factory_1.interactionType, validData, test);
-    DescribeOptionalProp_1.default('correctResponsePattern', Factory_1.string, validData, test);
+    DescribeOptionalProp_1.default('correctResponsePattern', Factory_1.stringValue, validData, test);
     DescribeInteractionProp_1.default(['choices'], 'choice', test);
     DescribeInteractionProp_1.default(['choices'], 'sequencing', test);
     DescribeInteractionProp_1.default(['scale'], 'likert', test);

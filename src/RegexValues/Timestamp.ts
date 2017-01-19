@@ -1,15 +1,15 @@
 import { checkRegex } from 'rulr';
 
-const YEAR = "(\\d{4})";
-const MONTH = "((0[1-9])|(1[012]))";
-const DAY = "((0[1-9])|([12]\\d)|(3[01]))";
-const P_HOUR = "(([01]\\d)|(2[0123]))";
-const N_HOUR = "((0[1-9])|(1\\d)|(2[0123]))";
-const MINUTE = "([012345]\\d)";
-const SECOND = "([012345]\\d)";
-const FRACTION = "(\\d+)";
-const DATE_SEPARATOR = "-";
-const TIME_SEPARATOR = ":";
+const YEAR = '(\\d{4})';
+const MONTH = '((0[1-9])|(1[012]))';
+const DAY = '((0[1-9])|([12]\\d)|(3[01]))';
+const P_HOUR = '(([01]\\d)|(2[0123]))';
+const N_HOUR = '((0[1-9])|(1\\d)|(2[0123]))';
+const MINUTE = '([012345]\\d)';
+const SECOND = '([012345]\\d)';
+const FRACTION = '(\\d+)';
+const DATE_SEPARATOR = '-';
+const TIME_SEPARATOR = ':';
 const BASIC_SECONDS = `(${SECOND}${FRACTION}?)`;
 const BASIC_DATE = `(${YEAR}${MONTH}${DAY})`;
 const BASIC_TIME = `(${P_HOUR}(${MINUTE}${BASIC_SECONDS}?)?)`;

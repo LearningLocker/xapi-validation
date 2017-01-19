@@ -27,8 +27,8 @@ exports.default = function (test) {
     DescribeOptionalProp_1.default('instructor', Factory_1.actor, validData, test);
     DescribeOptionalProp_1.default('team', Factory_1.group, validData, test);
     DescribeOptionalProp_1.default('contextActivities', Factory_1.contextActivities, validData, test);
-    DescribeOptionalProp_1.default('revision', Factory_1.string, validData, test);
-    DescribeOptionalProp_1.default('platform', Factory_1.string, validData, test);
+    DescribeOptionalProp_1.default('revision', Factory_1.stringValue, validData, test);
+    DescribeOptionalProp_1.default('platform', Factory_1.stringValue, validData, test);
     DescribeOptionalProp_1.default('language', Factory_1.language, validData, test);
     DescribeOptionalProp_1.default('statement', Factory_1.statementRef, validData, test);
     DescribeOptionalProp_1.default('extensions', Factory_1.extensions, validData, test);

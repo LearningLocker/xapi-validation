@@ -1,7 +1,7 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
-import { iri, languageMap, imt, integer, string } from '../Factory';
+import { iri, languageMap, imt, integerValue, stringValue } from '../Factory';
 
 const validData = {
   usageType: 'http://www.example.com',
@@ -18,7 +18,7 @@ export default (test: Test) => {
   describeRequiredProp('display', languageMap, validData, test);
   describeOptionalProp('description', languageMap, validData, test);
   describeRequiredProp('contentType', imt, validData, test);
-  describeRequiredProp('length', integer, validData, test);
-  describeRequiredProp('sha2', string, validData, test);
+  describeRequiredProp('length', integerValue, validData, test);
+  describeRequiredProp('sha2', stringValue, validData, test);
   describeOptionalProp('fileUrl', iri, validData, test);
 };

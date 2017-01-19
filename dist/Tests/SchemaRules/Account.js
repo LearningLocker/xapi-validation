@@ -8,5 +8,5 @@ var validData = {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
     DescribeRequiredProp_1.default('homePage', Factory_1.iri, validData, test);
-    DescribeRequiredProp_1.default('name', Factory_1.string, validData, test);
+    DescribeRequiredProp_1.default('name', Factory_1.stringValue, validData, test);
 };

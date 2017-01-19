@@ -11,13 +11,13 @@ const checkNumber = (type: any, checker: (data: any) => boolean): Rule =>
     checker(data) ? [] : [checkTypeWarning(type)(data)(path)]
   );
 
-export const any: Rule = () => [];
-export const string: Rule = checkType(String);
-export const boolean: Rule = checkType(Boolean);
-export const number: Rule = checkType(Number);
-export const integer: Rule = checkNumber('Integer', data =>
+export const anyValue: Rule = () => [];
+export const stringValue: Rule = checkType(String);
+export const booleanValue: Rule = checkType(Boolean);
+export const numberValue: Rule = checkType(Number);
+export const integerValue: Rule = checkNumber('Integer', data =>
   (data - Math.floor(data)) === 0
 );
-export const scaled: Rule = checkNumber('Scaled', data =>
+export const scaledValue: Rule = checkNumber('Scaled', data =>
   (-1) <= data && data <= 1
 );

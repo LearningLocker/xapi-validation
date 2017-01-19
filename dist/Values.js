@@ -5,13 +5,13 @@ var checkNumber = function (type, checker) {
         return checker(data) ? [] : [rulr_1.checkTypeWarning(type)(data)(path)];
     });
 };
-exports.any = function () { return []; };
-exports.string = rulr_1.checkType(String);
-exports.boolean = rulr_1.checkType(Boolean);
-exports.number = rulr_1.checkType(Number);
-exports.integer = checkNumber('Integer', function (data) {
+exports.anyValue = function () { return []; };
+exports.stringValue = rulr_1.checkType(String);
+exports.booleanValue = rulr_1.checkType(Boolean);
+exports.numberValue = rulr_1.checkType(Number);
+exports.integerValue = checkNumber('Integer', function (data) {
     return (data - Math.floor(data)) === 0;
 });
-exports.scaled = checkNumber('Scaled', function (data) {
+exports.scaledValue = checkNumber('Scaled', function (data) {
     return (-1) <= data && data <= 1;
 });

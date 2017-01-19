@@ -1,7 +1,7 @@
 import { Rule } from 'rulr';
-export declare const any: Rule;
-export declare const string: Rule;
-export declare const boolean: Rule;
-export declare const number: Rule;
-export declare const integer: Rule;
-export declare const scaled: Rule;
+export declare const anyValue: Rule;
+export declare const stringValue: Rule;
+export declare const booleanValue: Rule;
+export declare const numberValue: Rule;
+export declare const integerValue: Rule;
+export declare const scaledValue: Rule;

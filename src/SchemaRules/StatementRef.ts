@@ -1,7 +1,7 @@
 import { restrictToSchema, required, optional } from 'rulr';
-import { uuid, string } from '../Factory';
+import { uuid, stringValue } from '../Factory';
 
 export default restrictToSchema({
-  objectType: optional(string),
+  objectType: optional(stringValue),
   id: required(uuid),
 });

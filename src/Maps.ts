@@ -1,5 +1,5 @@
 import { Rule, Warning } from 'rulr';
-import { any, string, iri, language } from './Factory';
+import { anyValue, stringValue, iri, language } from './Factory';
 
 const map = (keyRule: Rule, valueRule: Rule): Rule => (data, path) => {
   const keys = Object.keys(data);
@@ -10,5 +10,5 @@ const map = (keyRule: Rule, valueRule: Rule): Rule => (data, path) => {
   , []);
 };
 
-export const extensions = map(iri, any);
-export const languageMap = map(language, string);
+export const extensions = map(iri, anyValue);
+export const languageMap = map(language, stringValue);

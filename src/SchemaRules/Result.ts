@@ -1,25 +1,25 @@
 import { restrictToSchema, optional } from 'rulr';
 import {
-  scaled,
-  number,
-  boolean,
-  string,
+  scaledValue,
+  numberValue,
+  booleanValue,
+  stringValue,
   duration,
   extensions,
 } from '../Factory';
 
 const score = restrictToSchema({
-  scaled: optional(scaled),
-  raw: optional(number),
-  min: optional(number),
-  max: optional(number),
+  scaled: optional(scaledValue),
+  raw: optional(numberValue),
+  min: optional(numberValue),
+  max: optional(numberValue),
 });
 
 export default restrictToSchema({
   score: optional(score),
-  success: optional(boolean),
-  completion: optional(boolean),
-  response: optional(string),
+  success: optional(booleanValue),
+  completion: optional(booleanValue),
+  response: optional(stringValue),
   duration: optional(duration),
   extensions: optional(extensions),
 });

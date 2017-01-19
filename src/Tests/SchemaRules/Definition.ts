@@ -6,7 +6,7 @@ import {
   iri,
   extensions,
   interactionType,
-  string,
+  stringValue,
 } from '../Factory';
 
 const validData = {};
@@ -18,7 +18,7 @@ export default (test: Test) => {
   describeOptionalProp('moreInfo', iri, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);
   describeOptionalProp('interactionType', interactionType, validData, test);
-  describeOptionalProp('correctResponsePattern', string, validData, test);
+  describeOptionalProp('correctResponsePattern', stringValue, validData, test);
 
   describeInteractionProp(['choices'], 'choice', test);
   describeInteractionProp(['choices'], 'sequencing', test);
