@@ -11,8 +11,8 @@ export default composeRules([
 
       if (members !== 2) return [membersTypeError(data)(path)];
 
-      const invalidMembers = data.member.filter(member =>
-        member.objectType !== "Agent" && member.objectType !== undefined
+      const invalidMembers = data.member.filter((member: any) =>
+        member.objectType !== 'Agent' && member.objectType !== undefined
       );
 
       if (invalidMembers.length > 0) return [membersLengthError(data)(path)];

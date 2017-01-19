@@ -1,2 +1,3 @@
-export declare const extensions: (data: any, path: any) => never[];
-export declare const languageMap: (data: any, path: any) => never[];
+import { Rule } from 'rulr';
+export declare const extensions: Rule;
+export declare const languageMap: Rule;

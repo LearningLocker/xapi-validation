@@ -1,6 +1,7 @@
-export declare const any: () => never[];
-export declare const string: any;
-export declare const boolean: any;
-export declare const number: any;
-export declare const integer: any;
-export declare const scaled: any;
+import { Rule } from 'rulr';
+export declare const any: Rule;
+export declare const string: Rule;
+export declare const boolean: Rule;
+export declare const number: Rule;
+export declare const integer: Rule;
+export declare const scaled: Rule;

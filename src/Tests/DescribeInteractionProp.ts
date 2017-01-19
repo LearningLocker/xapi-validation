@@ -8,7 +8,7 @@ import { interactionComponent } from './Factory';
 const interactionComponents = collection(interactionComponent);
 const allComponents = ['choices', 'scale', 'source', 'target', 'steps'];
 
-export default (validProps, type, test: Test) => {
+export default (validProps: string[], type: string, test: Test) => {
   validProps.forEach(prop =>
     describeOptionalProp(prop, interactionComponents, {
       interactionType: type

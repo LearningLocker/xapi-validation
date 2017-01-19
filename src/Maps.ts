@@ -1,9 +1,10 @@
+import { Rule, Warning } from 'rulr';
 import { any, string, iri, language } from './Factory';
 
-const map = (keyRule, valueRule) => (data, path) => {
+const map = (keyRule: Rule, valueRule: Rule): Rule => (data, path) => {
   const keys = Object.keys(data);
-  return keys.reduce((errors, key) =>
-    errors.concat(keyRule(key, path)).concat(
+  return keys.reduce((warnings: Warning[], key: string) =>
+    warnings.concat(keyRule(key, path)).concat(
       valueRule(data[key], path.concat(key))
     )
   , []);

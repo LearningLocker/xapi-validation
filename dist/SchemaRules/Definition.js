@@ -23,7 +23,7 @@ var getSupportedComponents = function (interactionType) {
     }
 };
 var getUnsupportedComponents = function (interactionType) {
-    var allComponents = ["choices", "scale", "source", "target", "steps"];
+    var allComponents = ['choices', 'scale', 'source', 'target', 'steps'];
     var supportedComponents = getSupportedComponents(interactionType);
     return allComponents.filter(function (component) { return !supportedComponents.includes(component); });
 };

@@ -1,7 +1,11 @@
-import { first, checkType, warn } from 'rulr';
+import { first, checkType, warn, Rule } from 'rulr';
+
+export type Types = {[key: string]: Rule};
 
 export default (
-  types, defaultType, error = data => warn(`Invalid object type \`${data}\``)
+  types: () => Types,
+  defaultType: string,
+  error = (data: any) => warn(`Invalid object type \`${data}\``)
 ) => first(checkType(Object), (data, path) => {
   const typeRules = types();
   const type = typeRules[data.objectType || defaultType];

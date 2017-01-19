@@ -1,10 +1,13 @@
+import { Rule } from 'rulr';
 import * as values from './Values';
 
-const requireFile = file => ruleAccessor => (data, path) =>
-  ruleAccessor(require(file))(data, path);
+const requireFile = (file: string) =>
+  (ruleAccessor: ((mod: any) => any)): Rule =>
+    (data, path) =>
+      ruleAccessor(require(file))(data, path);
 
 const requireMap = requireFile('./maps');
-const requireRule = file => requireFile(file)(mod => mod.default);
+const requireRule = (file: string) => requireFile(file)((mod: any) => mod.default);
 
 export const any = values.any;
 export const account = requireRule('./SchemaRules/Account');

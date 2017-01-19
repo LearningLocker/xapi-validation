@@ -1,8 +1,12 @@
 "use strict";
 var values = require("./Values");
-var requireFile = function (file) { return function (ruleAccessor) { return function (data, path) {
-    return ruleAccessor(require(file))(data, path);
-}; }; };
+var requireFile = function (file) {
+    return function (ruleAccessor) {
+        return function (data, path) {
+            return ruleAccessor(require(file))(data, path);
+        };
+    };
+};
 var requireMap = requireFile('./maps');
 var requireRule = function (file) { return requireFile(file)(function (mod) { return mod.default; }); };
 exports.any = values.any;

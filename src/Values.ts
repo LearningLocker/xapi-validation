@@ -1,21 +1,23 @@
-const {
+import {
   pathString,
   first,
   checkType,
   checkTypeWarning,
-} = require('rulr');
+  Rule
+} from 'rulr';
 
-const checkNumber = (type, checker) => first(checkType(Number), (data, path) =>
-  checker(data) ? [] : [checkTypeWarning(type)(data)(path)]
-);
+const checkNumber = (type: any, checker: (data: any) => boolean): Rule =>
+  first(checkType(Number), (data, path) =>
+    checker(data) ? [] : [checkTypeWarning(type)(data)(path)]
+  );
 
-export const any = () => [];
-export const string = checkType(String);
-export const boolean = checkType(Boolean);
-export const number = checkType(Number);
-export const integer = checkNumber('Integer', data =>
+export const any: Rule = () => [];
+export const string: Rule = checkType(String);
+export const boolean: Rule = checkType(Boolean);
+export const number: Rule = checkType(Number);
+export const integer: Rule = checkNumber('Integer', data =>
   (data - Math.floor(data)) === 0
 );
-export const scaled = checkNumber('Scaled', data =>
+export const scaled: Rule = checkNumber('Scaled', data =>
   (-1) <= data && data <= 1
 );

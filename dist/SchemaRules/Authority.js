@@ -13,7 +13,7 @@ exports.default = rulr_1.composeRules([
             if (members !== 2)
                 return [Errors_1.membersTypeError(data)(path)];
             var invalidMembers = data.member.filter(function (member) {
-                return member.objectType !== "Agent" && member.objectType !== undefined;
+                return member.objectType !== 'Agent' && member.objectType !== undefined;
             });
             if (invalidMembers.length > 0)
                 return [Errors_1.membersLengthError(data)(path)];

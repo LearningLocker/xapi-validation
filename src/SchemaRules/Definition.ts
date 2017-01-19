@@ -11,7 +11,7 @@ import {
   interactionComponent,
 } from '../Factory';
 
-const getSupportedComponents = interactionType => {
+const getSupportedComponents = (interactionType: string): string[] => {
   switch (interactionType) {
     case 'choice':
     case 'sequencing':
@@ -31,8 +31,8 @@ const getSupportedComponents = interactionType => {
       return [];
   }
 };
-const getUnsupportedComponents = interactionType => {
-  const allComponents = ["choices", "scale", "source", "target", "steps"];
+const getUnsupportedComponents = (interactionType: string): string[] => {
+  const allComponents = ['choices', 'scale', 'source', 'target', 'steps'];
   const supportedComponents = getSupportedComponents(interactionType);
   return allComponents.filter(
     component => !supportedComponents.includes(component)

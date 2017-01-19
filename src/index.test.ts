@@ -2,10 +2,10 @@ import * as assert from 'assert';
 import validateStatement from './index';
 import { statement } from './Tests/Factory';
 
-const assertArray = (value, message) =>
+const assertArray = (value: any, message: string) =>
   assert.equal(Array.isArray(value), true, message);
 
-const encodeData = data =>
+const encodeData = (data: any) =>
   JSON.stringify(data, null, 2);
 
 statement((data, valid) => {

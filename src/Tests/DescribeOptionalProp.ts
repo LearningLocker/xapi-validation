@@ -2,7 +2,7 @@ import 'mocha';
 import Test from './Helpers/Test';
 import { omit } from 'lodash';
 
-export default (prop, describer, validData, test: Test) => {
+export default (prop: string, describer: (test: Test) => void, validData: any, test: Test) => {
   it(`should not return an error when missing ${prop}`, () =>
     test(omit(validData, prop), true)
   );
