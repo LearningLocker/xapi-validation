@@ -7,7 +7,7 @@ var requireFile = function (file) {
         };
     };
 };
-var requireMap = requireFile('./maps');
+var requireMap = requireFile('./Maps');
 var requireRule = function (file) { return requireFile(file)(function (mod) { return mod.default; }); };
 exports.any = values.any;
 exports.account = requireRule('./SchemaRules/Account');

@@ -6,7 +6,7 @@ const requireFile = (file: string) =>
     (data, path) =>
       ruleAccessor(require(file))(data, path);
 
-const requireMap = requireFile('./maps');
+const requireMap = requireFile('./Maps');
 const requireRule = (file: string) => requireFile(file)((mod: any) => mod.default);
 
 export const any = values.any;
