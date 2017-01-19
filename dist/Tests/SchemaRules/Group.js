@@ -1,4 +1,5 @@
 "use strict";
+require("mocha");
 var ItsInvalid_1 = require("../ItsInvalid");
 var AgentSchema_1 = require("../Helpers/AgentSchema");
 var Factory_1 = require("../Factory");

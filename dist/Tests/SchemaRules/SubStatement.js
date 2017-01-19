@@ -36,6 +36,6 @@ exports.default = function (test) {
     }), 'object is a SubStatement', test);
     DescribeRequiredProp_1.default('object', Factory_1.subStatementObject, validData, test);
     StatementSchema_1.default(function (data, valid) {
-        return test(Object.assign({}, validData, data), valid);
+        return test(Object.assign({}, data), valid);
     });
 };

@@ -1,9 +1,10 @@
+import Test from '../Helpers/Test';
 import itsInvalid from '../ItsInvalid';
 import itsValid from '../ItsValid';
 
 const validData = 'mailto:test@example.com';
 
-export default test => {
+export default (test: Test) => {
   itsInvalid('test@example.com', 'not a Mailto', test);
   itsInvalid(10, 'not a String', test);
   itsValid(validData, test);

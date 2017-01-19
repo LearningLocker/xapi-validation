@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import { scaled, number } from '../Factory';
 
@@ -8,7 +9,7 @@ const validData = {
   max: 0,
 };
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('scaled', scaled, validData, test);
   describeOptionalProp('raw', number, validData, test);
   describeOptionalProp('min', number, validData, test);

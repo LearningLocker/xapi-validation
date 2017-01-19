@@ -1,2 +1,2 @@
-declare var _default: (data: any) => any;
+declare var _default: (data: any) => string[];
 export default _default;

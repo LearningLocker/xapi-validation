@@ -1,9 +1,11 @@
+import 'mocha';
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import itsInvalid from '../ItsInvalid';
 import agentSchema from '../Helpers/AgentSchema';
 import { agent } from '../Factory';
 
-export default test => {
+export default (test: Test) => {
   itsInvalid({
     objectType: 'Group',
     name: 'Test',

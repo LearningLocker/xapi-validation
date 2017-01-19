@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeInteractionProp from '../DescribeInteractionProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import {
@@ -10,7 +11,7 @@ import {
 
 const validData = {};
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('name', languageMap, validData, test);
   describeOptionalProp('description', languageMap, validData, test);
   describeOptionalProp('type', iri, validData, test);

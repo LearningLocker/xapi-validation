@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import itsInvalid from '../ItsInvalid';
@@ -18,7 +19,7 @@ const validData = {
   },
 };
 
-export default test => {
+export default (test: Test) => {
   itsInvalid(Object.assign({}, validData, {
     object: {
       objectType: 'SubStatement',
@@ -37,6 +38,6 @@ export default test => {
   }), 'object is a SubStatement', test);
   describeRequiredProp('object', subStatementObject, validData, test);
   statementSchema((data, valid) =>
-    test(Object.assign({}, validData, data), valid)
-  )
+    test(Object.assign({}, data), valid)
+  );
 };

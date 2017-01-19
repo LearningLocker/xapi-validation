@@ -1,5 +1,7 @@
-const requireTest = rule => (data, path) =>
-  require(rule)(data, path);
+import Test from './Helpers/Test';
+
+const requireTest = (rule: string) => (test: Test): void =>
+  require(rule).default(test);
 
 export const account = requireTest('./SchemaRules/Account');
 export const activity = requireTest('./SchemaRules/Activity');

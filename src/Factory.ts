@@ -4,7 +4,7 @@ const requireFile = file => ruleAccessor => (data, path) =>
   ruleAccessor(require(file))(data, path);
 
 const requireMap = requireFile('./maps');
-const requireRule = file => requireFile(file)(rule => rule);
+const requireRule = file => requireFile(file)(mod => mod.default);
 
 export const any = values.any;
 export const account = requireRule('./SchemaRules/Account');

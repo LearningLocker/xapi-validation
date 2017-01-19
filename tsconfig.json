@@ -6,7 +6,6 @@
     "rootDir": "src",
     "outDir": "dist",
     "lib": [
-      "es2015",
       "es2016"
     ],
     "removeComments": true,
@@ -72,6 +71,7 @@
     "src/Tests/Helpers/ObjectTypeFactory.ts",
     "src/Tests/Helpers/StatementRules.ts",
     "src/Tests/Helpers/StatementSchema.ts",
+    "src/Tests/Helpers/Test.ts",
     "src/Tests/ItsInvalid.ts",
     "src/Tests/ItsValid.ts",
     "src/Tests/Maps/Extensions.ts",

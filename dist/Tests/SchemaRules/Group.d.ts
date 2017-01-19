@@ -1,2 +1,4 @@
-declare var _default: (test: any) => void;
+import 'mocha';
+import Test from '../Helpers/Test';
+declare var _default: (test: Test) => void;
 export default _default;

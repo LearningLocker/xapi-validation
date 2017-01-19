@@ -1,10 +1,11 @@
 "use strict";
+require("mocha");
 var DescribeOptionalProp_1 = require("./DescribeOptionalProp");
 var ItsInvalid_1 = require("./ItsInvalid");
 var Collection_1 = require("./Helpers/Collection");
 var Factory_1 = require("./Factory");
 var interactionComponents = Collection_1.default(Factory_1.interactionComponent);
-var allComponents = ["choices", "scale", "source", "target", "steps"];
+var allComponents = ['choices', 'scale', 'source', 'target', 'steps'];
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (validProps, type, test) {
     validProps.forEach(function (prop) {

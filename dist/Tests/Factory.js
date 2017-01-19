@@ -1,6 +1,6 @@
 "use strict";
-var requireTest = function (rule) { return function (data, path) {
-    return require(rule)(data, path);
+var requireTest = function (rule) { return function (test) {
+    return require(rule).default(test);
 }; };
 exports.account = requireTest('./SchemaRules/Account');
 exports.activity = requireTest('./SchemaRules/Activity');

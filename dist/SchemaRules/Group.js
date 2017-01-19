@@ -15,7 +15,7 @@ exports.default = rulr_1.composeRules([
             Array.isArray(data.member) &&
             data.member.length > 0);
         if (usedIfis.length > 1)
-            return Errors_1.ifiCountError(usedIfis)(path);
+            return [Errors_1.ifiCountError(usedIfis, data)(path)];
         var hasNoMembers = usedIfis.length === 0 && !usedMember;
         return hasNoMembers ? [Errors_1.noMembersError(data)(path)] : [];
     },

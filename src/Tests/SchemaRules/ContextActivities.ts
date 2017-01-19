@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import collection from '../Helpers/Collection';
 import { activity } from '../Factory';
@@ -11,7 +12,7 @@ const validData = {
 
 const activities = collection(activity);
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('parent', activities, validData, test);
   describeOptionalProp('category', activities, validData, test);
   describeOptionalProp('grouping', activities, validData, test);

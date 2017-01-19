@@ -1,7 +1,8 @@
+import Test from '../Helpers/Test';
 import itsInvalid from '../ItsInvalid';
 import itsValid from '../ItsValid';
 
-export default test => {
+export default (test: Test) => {
   itsInvalid(1.01, 'too high', test);
   itsInvalid(-1.01, 'too low', test);
   itsInvalid('', 'not a Number', test);

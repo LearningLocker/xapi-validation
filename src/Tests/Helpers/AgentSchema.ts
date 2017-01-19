@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import describeIfiProp from '../DescribeIfiProp';
 import itsInvalid from '../ItsInvalid';
@@ -13,7 +14,7 @@ const validData = {
   mbox: 'mailto:test@example.com',
 };
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('name', string, validData, test);
   describeIfiProp('mbox', mailto, test);
   describeIfiProp('mbox_sha1sum', sha1, test);

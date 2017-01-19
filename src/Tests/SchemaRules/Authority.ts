@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import itsInvalid from '../ItsInvalid';
 import itsValid from '../ItsValid';
@@ -8,7 +9,7 @@ const agentMember = {
   mbox: 'mailto:test@example.com',
 };
 
-export default test => {
+export default (test: Test) => {
   itsInvalid({
     objectType: 'Group',
     member: [],

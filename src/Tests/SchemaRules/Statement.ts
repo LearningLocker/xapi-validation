@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import statementSchema from '../Helpers/StatementSchema';
@@ -17,7 +18,7 @@ const validData = {
   },
 };
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('id', uuid, validData, test);
   describeOptionalProp('stored', timestamp, validData, test);
   describeOptionalProp('authority', authority, validData, test);

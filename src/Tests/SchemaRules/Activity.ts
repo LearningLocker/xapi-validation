@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import { iri, string, definition } from '../Factory';
@@ -8,7 +9,7 @@ const validData = {
   definition: {},
 };
 
-export default test => {
+export default (test: Test) => {
   describeRequiredProp('id', iri, validData, test);
   describeOptionalProp('definition', definition, validData, test);
 };

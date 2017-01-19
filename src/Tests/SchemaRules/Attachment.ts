@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import { iri, languageMap, imt, integer, string } from '../Factory';
@@ -12,7 +13,7 @@ const validData = {
   fileUrl: 'http://www.example.com',
 };
 
-export default test => {
+export default (test: Test) => {
   describeRequiredProp('usageType', iri, validData, test);
   describeRequiredProp('display', languageMap, validData, test);
   describeOptionalProp('description', languageMap, validData, test);

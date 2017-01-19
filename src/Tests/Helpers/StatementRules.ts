@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 const statementRef = {
   objectType: 'StatementRef',
   id: '957f56b7-1d34-4b01-9408-3ffeb2053b28',
@@ -12,7 +13,7 @@ const verb = {
   id: 'http://adlnet.gov/expapi/verbs/voided',
 };
 
-export default test => {
+export default (test: Test) => {
   it('should return an error when platform is set incorrectly', () =>
     test({
       object: statementRef,

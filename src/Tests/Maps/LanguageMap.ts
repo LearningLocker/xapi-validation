@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import itsInvalid from '../ItsInvalid';
 import itsValid from '../ItsValid';
 
@@ -5,7 +6,7 @@ const validData = {
   'en-GB': 'test',
 };
 
-export default test => {
+export default (test: Test) => {
   itsInvalid({
     '-': 'test'
   }, 'containing invalid keys', test);

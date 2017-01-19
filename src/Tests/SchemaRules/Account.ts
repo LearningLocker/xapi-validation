@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import { iri, string } from '../Factory';
 
@@ -6,7 +7,7 @@ const validData = {
   name: '123',
 };
 
-export default test => {
+export default (test: Test) => {
   describeRequiredProp('homePage', iri, validData, test);
   describeRequiredProp('name', string, validData, test);
 };

@@ -1,4 +1,5 @@
 "use strict";
+require("mocha");
 var lodash_1 = require("lodash");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (prop, describer, validData, test) {

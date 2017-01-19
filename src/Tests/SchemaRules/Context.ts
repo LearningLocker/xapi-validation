@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import {
   uuid,
@@ -31,7 +32,7 @@ const validData = {
   extensions: {},
 };
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('registration', uuid, validData, test);
   describeOptionalProp('instructor', actor, validData, test);
   describeOptionalProp('team', group, validData, test);

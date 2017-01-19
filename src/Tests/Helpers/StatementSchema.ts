@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
 import statementRules from '../Helpers/StatementRules';
@@ -28,7 +29,7 @@ const validData = {
   },
 };
 
-export default test => {
+export default (test: Test) => {
   describeRequiredProp('actor', actor, validData, test);
   describeRequiredProp('verb', verb, validData, test);
   describeOptionalProp('result', result, validData, test);

@@ -1,3 +1,5 @@
 /// <reference types="mocha" />
-declare var _default: (prop: any, describer: any, test: any) => Mocha.ISuite;
+import Test from './Helpers/Test';
+import 'mocha';
+declare var _default: (prop: any, describer: any, test: Test) => Mocha.ISuite;
 export default _default;

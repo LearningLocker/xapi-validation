@@ -1,3 +1,4 @@
+import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import {
   score,
@@ -16,7 +17,7 @@ const validData = {
   extensions: {},
 };
 
-export default test => {
+export default (test: Test) => {
   describeOptionalProp('score', score, validData, test);
   describeOptionalProp('success', boolean, validData, test);
   describeOptionalProp('completion', boolean, validData, test);
