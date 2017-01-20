@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "rulr": "git+https://git@github.com/ryansmith94/rulr.git"
+    "rulr": "^1.1.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.45",
