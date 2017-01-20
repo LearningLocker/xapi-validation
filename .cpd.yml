@@ -1,5 +1,5 @@
 languages: typescript
-files: src/**.ts
+files: src/**/*
 min-lines: 3
 min-tokens: 30
 debug: false

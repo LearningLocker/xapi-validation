@@ -1,0 +1,45 @@
+"use strict";
+var values = require("./Values");
+var requireFile = function (file) {
+    return function (ruleAccessor) {
+        return function (data, path) {
+            return ruleAccessor(require(file))(data, path);
+        };
+    };
+};
+var requireMap = requireFile('./Maps');
+var requireRule = function (file) { return requireFile(file)(function (mod) { return mod.default; }); };
+exports.anyValue = values.anyValue;
+exports.account = requireRule('./SchemaRules/Account');
+exports.activity = requireRule('./SchemaRules/Activity');
+exports.actor = requireRule('./SchemaRules/Actor');
+exports.agent = requireRule('./SchemaRules/Agent');
+exports.attachment = requireRule('./SchemaRules/Attachment');
+exports.authority = requireRule('./SchemaRules/Authority');
+exports.booleanValue = values.booleanValue;
+exports.context = requireRule('./SchemaRules/Context');
+exports.definition = requireRule('./SchemaRules/Definition');
+exports.duration = requireRule('./RegexValues/Duration');
+exports.extensions = requireMap(function (maps) { return maps.extensions; });
+exports.group = requireRule('./SchemaRules/Group');
+exports.imt = requireRule('./RegexValues/Imt');
+exports.integerValue = values.integerValue;
+exports.interactionComponent = requireRule('./SchemaRules/InteractionComponent');
+exports.interactionType = requireRule('./RegexValues/InteractionType');
+exports.iri = requireRule('./RegexValues/Iri');
+exports.language = requireRule('./RegexValues/Language');
+exports.languageMap = requireMap(function (maps) { return maps.languageMap; });
+exports.mailto = requireRule('./RegexValues/Mailto');
+exports.numberValue = values.numberValue;
+exports.object = requireRule('./SchemaRules/Object');
+exports.result = requireRule('./SchemaRules/Result');
+exports.scaledValue = values.scaledValue;
+exports.sha1 = requireRule('./RegexValues/Sha1');
+exports.statement = requireRule('./SchemaRules/Statement');
+exports.statementRef = requireRule('./SchemaRules/StatementRef');
+exports.stringValue = values.stringValue;
+exports.subStatement = requireRule('./SchemaRules/SubStatement');
+exports.timestamp = requireRule('./RegexValues/Timestamp');
+exports.uuid = requireRule('./RegexValues/Uuid');
+exports.verb = requireRule('./SchemaRules/Verb');
+exports.version = requireRule('./RegexValues/Version');
