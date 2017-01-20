@@ -1,3 +1,2 @@
-import Test from '../Helpers/Test';
-declare var _default: (test: Test) => void;
+declare var _default: (test: (data: any, valid: boolean) => void) => void;
 export default _default;

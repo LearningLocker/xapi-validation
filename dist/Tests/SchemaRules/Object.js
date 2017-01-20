@@ -1,13 +1,7 @@
 "use strict";
-var ObjectTypeFactory_1 = require("../Helpers/ObjectTypeFactory");
+var Object_1 = require("../Helpers/Object");
 var Factory_1 = require("../Factory");
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = function (test) {
-    return ObjectTypeFactory_1.default({
-        Agent: Factory_1.agent,
-        Group: Factory_1.group,
-        Activity: Factory_1.activity,
-        SubStatement: Factory_1.subStatement,
-        StatementRef: Factory_1.statementRef,
-    }, 'Activity', test);
-};
+exports.default = Object_1.default({
+    SubStatement: Factory_1.subStatement,
+});

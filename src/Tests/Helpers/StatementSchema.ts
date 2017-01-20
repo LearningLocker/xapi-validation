@@ -1,6 +1,7 @@
 import Test from '../Helpers/Test';
 import describeRequiredProp from '../DescribeRequiredProp';
 import describeOptionalProp from '../DescribeOptionalProp';
+import validStatementData from '../Helpers/ValidStatementData';
 import statementRules from '../Helpers/StatementRules';
 import collection from '../Helpers/Collection';
 import {
@@ -15,28 +16,14 @@ import {
 
 const attachments = collection(attachment);
 
-const validData = {
-  actor: {
-    objectType: 'Agent',
-    mbox: 'mailto:test@example.com',
-  },
-  verb: {
-    id: 'http://www.example.com',
-  },
-  object: {
-    objectType: 'Activity',
-    id: 'http://www.example.com',
-  },
-};
-
 export default (test: Test) => {
-  describeRequiredProp('actor', actor, validData, test);
-  describeRequiredProp('verb', verb, validData, test);
-  describeOptionalProp('result', result, validData, test);
-  describeOptionalProp('context', context, validData, test);
-  describeOptionalProp('timestamp', timestamp, validData, test);
-  describeOptionalProp('attachments', attachments, validData, test);
+  describeRequiredProp('actor', actor, validStatementData, test);
+  describeRequiredProp('verb', verb, validStatementData, test);
+  describeOptionalProp('result', result, validStatementData, test);
+  describeOptionalProp('context', context, validStatementData, test);
+  describeOptionalProp('timestamp', timestamp, validStatementData, test);
+  describeOptionalProp('attachments', attachments, validStatementData, test);
   statementRules((data, valid) =>
-    test(Object.assign({}, validData, data), valid)
+    test(Object.assign({}, validStatementData, data), valid)
   );
 };

@@ -1,17 +1,3 @@
-import Test from '../Helpers/Test';
-import objectTypeFactory from '../Helpers/ObjectTypeFactory';
-import {
-  agent,
-  group,
-  activity,
-  subStatement,
-  statementRef,
-} from '../Factory';
+import object from '../Helpers/Object';
 
-export default (test: Test) =>
-  objectTypeFactory({
-    Agent: agent,
-    Group: group,
-    Activity: activity,
-    StatementRef: statementRef,
-  }, 'Activity', test);
+export default object({});
