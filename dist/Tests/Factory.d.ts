@@ -12,6 +12,7 @@ export declare const definition: (test: Test) => void;
 export declare const duration: (test: Test) => void;
 export declare const extensions: (test: Test) => void;
 export declare const group: (test: Test) => void;
+export declare const subGroup: (test: Test) => void;
 export declare const imt: (test: Test) => void;
 export declare const integerValue: (test: Test) => void;
 export declare const interactionComponent: (test: Test) => void;

@@ -16,6 +16,7 @@ export const definition = requireTest('./SchemaRules/Definition');
 export const duration = requireTest('./RegexValues/Duration');
 export const extensions = requireTest('./Maps/Extensions');
 export const group = requireTest('./SchemaRules/Group');
+export const subGroup = requireTest('./SchemaRules/SubGroup');
 export const imt = requireTest('./RegexValues/Imt');
 export const integerValue = requireTest('./Values/Integer');
 export const interactionComponent = requireTest('./SchemaRules/InteractionComponent');

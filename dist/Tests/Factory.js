@@ -15,6 +15,7 @@ exports.definition = requireTest('./SchemaRules/Definition');
 exports.duration = requireTest('./RegexValues/Duration');
 exports.extensions = requireTest('./Maps/Extensions');
 exports.group = requireTest('./SchemaRules/Group');
+exports.subGroup = requireTest('./SchemaRules/SubGroup');
 exports.imt = requireTest('./RegexValues/Imt');
 exports.integerValue = requireTest('./Values/Integer');
 exports.interactionComponent = requireTest('./SchemaRules/InteractionComponent');
