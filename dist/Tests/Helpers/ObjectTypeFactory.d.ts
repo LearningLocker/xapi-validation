@@ -1,3 +1,4 @@
+import 'mocha';
 import Test from '../Helpers/Test';
 export declare type Type = (test: Test) => any;
 export declare type Types = {

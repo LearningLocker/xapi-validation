@@ -1,12 +1,17 @@
 "use strict";
 require("mocha");
+var ItsInvalid_1 = require("../ItsInvalid");
 var AgentSchema_1 = require("../Helpers/AgentSchema");
 var Factory_1 = require("../Factory");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
-    Factory_1.subGroup(test);
+    ItsInvalid_1.default({
+        objectType: 'Group',
+        name: 'Test',
+        member: [],
+    }, 'contains no members', test);
     describe('member', function () {
-        Factory_1.subGroup(function (value, valid) {
+        Factory_1.agent(function (value, valid) {
             return test({
                 objectType: 'Group',
                 name: 'Test',

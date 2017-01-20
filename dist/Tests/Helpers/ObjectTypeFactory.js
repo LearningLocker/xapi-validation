@@ -1,12 +1,17 @@
 "use strict";
+require("mocha");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (types, defaultType, test) {
     Object.keys(types).forEach(function (type) {
-        return types[type](function (data, valid) {
-            return test(Object.assign({}, data, {
-                objectType: type,
-            }), valid);
+        describe("Object Type: " + type, function () {
+            types[type](function (data, valid) {
+                test(Object.assign({}, data, {
+                    objectType: type,
+                }), valid);
+            });
         });
     });
-    types[defaultType](test);
+    describe("Default Object Type: " + defaultType + " ", function () {
+        types[defaultType](test);
+    });
 };

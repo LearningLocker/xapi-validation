@@ -3,12 +3,16 @@ import Test from '../Helpers/Test';
 import describeOptionalProp from '../DescribeOptionalProp';
 import itsInvalid from '../ItsInvalid';
 import agentSchema from '../Helpers/AgentSchema';
-import { agent, subGroup } from '../Factory';
+import { agent } from '../Factory';
 
 export default (test: Test) => {
-  subGroup(test);
+  itsInvalid({
+    objectType: 'Group',
+    name: 'Test',
+    member: [],
+  }, 'contains no members', test);
   describe('member', () => {
-    subGroup((value, valid) =>
+    agent((value, valid) =>
       test({
         objectType: 'Group',
         name: 'Test',
