@@ -1,4 +1,2 @@
-import 'mocha';
-import Test from './Helpers/Test';
-declare var _default: (prop: string, describer: (test: Test) => void, validData: any, test: Test) => void;
+declare var _default: (prop: string, describer: (test: (data: any, valid: boolean) => void) => void, validData: any, test: (data: any, valid: boolean) => void) => void;
 export default _default;
