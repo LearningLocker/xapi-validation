@@ -1,6 +1,6 @@
 languages: typescript
 files: src/**/*
 min-lines: 3
-min-tokens: 30
+min-tokens: 35
 debug: false
 skip-comments: true
