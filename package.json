@@ -1,9 +1,13 @@
 {
   "name": "xapi-validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validation library for the xAPI.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/LearningLocker/xapi-validation.git"
+  },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha dist/**/*.test.js",
     "test-watch": "./node_modules/mocha/bin/mocha dist/**/*.test.js --watch",
