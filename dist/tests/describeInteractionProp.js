@@ -16,11 +16,13 @@ exports.default = function (validProps, type, test) {
     allComponents.filter(function (prop) {
         return !validProps.includes(prop);
     }).forEach(function (prop) {
-        return itsInvalid_1.default((_a = {
+        var data = (_a = {
                 interactionType: type
             },
             _a[prop] = [],
-            _a), "containing unsupported component " + prop + " for " + type, test);
+            _a);
+        var message = "containing unsupported component " + prop + " for " + type;
+        itsInvalid_1.default(data, message, test);
         var _a;
     });
 };

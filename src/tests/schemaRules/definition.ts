@@ -8,10 +8,13 @@ import {
   interactionType,
   stringValue,
 } from '../factory';
+import itsInvalid from '../itsInvalid';
 
 const validData = {};
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
+
   describeOptionalProp('name', languageMap, validData, test);
   describeOptionalProp('description', languageMap, validData, test);
   describeOptionalProp('type', iri, validData, test);
@@ -25,6 +28,4 @@ export default (test: Test) => {
   describeInteractionProp(['scale'], 'likert', test);
   describeInteractionProp(['source', 'target'], 'matching', test);
   describeInteractionProp(['steps'], 'performance', test);
-
-  // invalidComponentsError
 };

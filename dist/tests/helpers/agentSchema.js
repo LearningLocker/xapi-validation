@@ -13,6 +13,7 @@ exports.default = function (test) {
     describeIfiProp_1.default('mbox_sha1sum', factory_1.sha1, test);
     describeIfiProp_1.default('openid', factory_1.iri, test);
     describeIfiProp_1.default('account', factory_1.account, test);
+    itsInvalid_1.default(10, 'not an object', test);
     itsInvalid_1.default({
         objectType: 'Agent',
         name: 'Test',
