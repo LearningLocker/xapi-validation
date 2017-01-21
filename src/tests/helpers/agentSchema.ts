@@ -20,6 +20,7 @@ export default (test: Test) => {
   describeIfiProp('mbox_sha1sum', sha1, test);
   describeIfiProp('openid', iri, test);
   describeIfiProp('account', account, test);
+  itsInvalid(10, 'not an object', test);
   itsInvalid({
     objectType: 'Agent',
     name: 'Test',
