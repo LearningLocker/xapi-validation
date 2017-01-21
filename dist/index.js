@@ -1,4 +1,4 @@
 "use strict";
-var Factory_1 = require("./Factory");
+var factory_1 = require("./factory");
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = function (data) { return Factory_1.statement(data, ['statement']); };
+exports.default = function (data) { return factory_1.statement(data, ['statement']); };

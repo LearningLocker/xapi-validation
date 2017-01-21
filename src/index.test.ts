@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import validateStatement from './index';
-import { statement } from './Tests/Factory';
+import { statement } from './tests/factory';
 
 const assertArray = (value: any, message: string) =>
   assert.equal(Array.isArray(value), true, message);
