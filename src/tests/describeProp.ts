@@ -8,8 +8,9 @@ export default (missingValid: boolean, description: string) =>
       test(omit(validData, prop), missingValid)
     );
     describe(prop, () => {
-      describer((value, valid) =>
-        test(Object.assign({}, validData, { [prop]: value }), valid)
-      );
+      describer((value, valid) => {
+        const data = { [prop]: value };
+        return test(Object.assign({}, validData, data), valid);
+      });
     });
   };

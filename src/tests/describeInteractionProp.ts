@@ -16,10 +16,12 @@ export default (validProps: string[], type: string, test: Test) => {
   );
   allComponents.filter(prop =>
     !validProps.includes(prop)
-  ).forEach(prop =>
-    itsInvalid({
+  ).forEach(prop => {
+    const data = {
       interactionType: type,
       [prop]: [],
-    }, `containing unsupported component ${prop} for ${type}`, test)
-  );
+    };
+    const message = `containing unsupported component ${prop} for ${type}`;
+    itsInvalid(data, message, test);
+  });
 };
