@@ -1,7 +1,7 @@
 import 'mocha';
 import Test from '../helpers/test';
-import describeOptionalProp from '../describeOptionalProp';
 import itsInvalid from '../itsInvalid';
+import describeMemberProp from '../describeMemberProp';
 import agentSchema from '../helpers/agentSchema';
 import { agent } from '../factory';
 
@@ -11,15 +11,6 @@ export default (test: Test) => {
     name: 'Test',
     member: [],
   }, 'contains no members', test);
-  describe('member', () => {
-    agent((value, valid) =>
-      test({
-        objectType: 'Group',
-        name: 'Test',
-        mbox: 'mailto:test@example.com',
-        member: [value],
-      }, valid)
-    );
-  });
+  describeMemberProp(agent, test);
   agentSchema(test);
 };
