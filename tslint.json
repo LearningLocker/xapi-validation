@@ -9,6 +9,11 @@
       true,
       "spaces"
     ],
+    "linebreak-style": [true, "LF"],
+    "eofline": true,
+    "max-classes-per-file": [true, 0],
+    "max-line-length": [true, 120],
+    "max-file-line-count": [true, 300],
     "no-unused-expression": true,
     "no-unused-new": true,
     "no-duplicate-variable":true,
@@ -16,6 +21,13 @@
     "no-internal-module":true,
     "no-trailing-whitespace":true,
     "no-var-keyword":true,
+    "align": true,
+    "import-spacing": true,
+    "interface-over-type-literal": false,
+    "object-literal-key-quotes": [true, "as-needed"],
+    "object-literal-shorthand": true,
+    "one-variable-per-declaration": true,
+    "no-consecutive-blank-lines": true,
     "one-line":[
       true,
       "check-open-brace",
@@ -43,10 +55,14 @@
         "variable-declaration":"nospace"
       }
     ],
-    "variable-name":[
-      true,
-      "ban-keywords"
-    ],
+    "variable-name":{
+      "items": [
+        "check-format",
+        "ban-keywords"
+      ],
+      "minLength": 3,
+      "maxLength": 15
+    },
     "whitespace":[
       true,
       "check-branch",

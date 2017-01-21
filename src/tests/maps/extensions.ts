@@ -8,7 +8,7 @@ const validData = {
 
 export default (test: Test) => {
   itsInvalid({
-    'http': 'test'
+    http: 'test'
   }, 'containing invalid keys', test);
   itsValid(validData, test);
 };

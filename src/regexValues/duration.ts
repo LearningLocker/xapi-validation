@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 import { checkRegex } from 'rulr';
 
 export default checkRegex(

@@ -2,7 +2,7 @@ import {
   first,
   checkType,
   checkTypeWarning,
-  Rule
+  Rule,
 } from 'rulr';
 
 const checkNumber = (type: any, checker: (data: any) => boolean): Rule =>

@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 import { pathString, Path } from 'rulr';
 
 export const subStatementError = () =>
