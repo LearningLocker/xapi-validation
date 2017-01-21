@@ -16,10 +16,10 @@
     "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
     "rulr": "^1.1.0"
   },
   "devDependencies": {
+    "lodash": "^4.17.4",
     "@types/lodash": "^4.14.45",
     "@types/mocha": "^2.2.35",
     "@types/node": "^7.0.0",

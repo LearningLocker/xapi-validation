@@ -7,7 +7,7 @@
 [![Test Coverage](https://codecov.io/gh/LearningLocker/xapi-validation/branch/master/graph/badge.svg)](https://codecov.io/gh/LearningLocker/xapi-validation)
 
 ```js
-npm install --save git+https://git@github.com/LearningLocker/xapi-validation.git
+npm install --save xapi-validation
 ```
 
 ## Why?
