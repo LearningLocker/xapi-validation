@@ -5,6 +5,6 @@ export default (prop: string, describer: (test: Test) => void, test: Test) =>
   describe(prop, () => {
     describer((value, valid) => {
       const data = { [prop]: value };
-      return test(data, valid);
+      test(data, valid);
     });
   });

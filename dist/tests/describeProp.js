@@ -10,7 +10,7 @@ exports.default = function (missingValid, description) {
         describe(prop, function () {
             describer(function (value, valid) {
                 var data = (_a = {}, _a[prop] = value, _a);
-                return test(Object.assign({}, validData, data), valid);
+                test(Object.assign({}, validData, data), valid);
                 var _a;
             });
         });

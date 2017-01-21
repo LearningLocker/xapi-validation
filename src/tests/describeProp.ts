@@ -10,7 +10,7 @@ export default (missingValid: boolean, description: string) =>
     describe(prop, () => {
       describer((value, valid) => {
         const data = { [prop]: value };
-        return test(Object.assign({}, validData, data), valid);
+        test(Object.assign({}, validData, data), valid);
       });
     });
   };
