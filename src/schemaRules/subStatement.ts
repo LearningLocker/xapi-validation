@@ -13,6 +13,6 @@ export default composeRules([
     const objectIsSubStatement = (
       data.object && data.object.objectType === 'SubStatement'
     );
-    return objectIsSubStatement ? [subStatementError(data)(path)] : [];
+    return objectIsSubStatement ? [subStatementError()(path)] : [];
   },
 ]);

@@ -1,6 +1,5 @@
 import Test from '../helpers/test';
 import describeRequiredProp from '../describeRequiredProp';
-import describeOptionalProp from '../describeOptionalProp';
 import itsInvalid from '../itsInvalid';
 import statementSchema from '../helpers/statementSchema';
 import validStatementData from '../helpers/validStatementData';

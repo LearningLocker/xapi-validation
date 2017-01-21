@@ -1,9 +1,9 @@
-export declare const subStatementError: (data: any) => (path: string[]) => string;
-export declare const contextPropError: (data: any) => (path: string[]) => string;
-export declare const voidError: (voidVerbId: string, data: any) => (path: string[]) => string;
-export declare const membersTypeError: (data: any) => (path: string[]) => string;
-export declare const membersLengthError: (data: any) => (path: string[]) => string;
-export declare const noMembersError: (data: any) => (path: string[]) => string;
-export declare const noIfiError: (data: any) => (path: string[]) => string;
-export declare const invalidComponentsError: (invalidComponents: string[], data: any) => (path: string[]) => string;
-export declare const ifiCountError: (usedIfis: string[], data: any) => (path: string[]) => string;
+export declare const subStatementError: () => (path: string[]) => string;
+export declare const contextPropError: () => (path: string[]) => string;
+export declare const voidError: (voidVerbId: string) => (path: string[]) => string;
+export declare const membersTypeError: () => (path: string[]) => string;
+export declare const membersLengthError: () => (path: string[]) => string;
+export declare const noMembersError: () => (path: string[]) => string;
+export declare const noIfiError: () => (path: string[]) => string;
+export declare const invalidComponentsError: (invalidComponents: string[]) => (path: string[]) => string;
+export declare const ifiCountError: (usedIfis: string[]) => (path: string[]) => string;

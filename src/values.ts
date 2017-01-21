@@ -1,5 +1,4 @@
 import {
-  pathString,
   first,
   checkType,
   checkTypeWarning,

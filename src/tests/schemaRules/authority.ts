@@ -1,5 +1,4 @@
 import Test from '../helpers/test';
-import describeOptionalProp from '../describeOptionalProp';
 import itsInvalid from '../itsInvalid';
 import itsValid from '../itsValid';
 import agentSchema from '../helpers/agentSchema';

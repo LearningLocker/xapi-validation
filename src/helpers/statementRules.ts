@@ -16,7 +16,7 @@ export default composeRules([
       )
     );
     const invalidContext = !objectIsActivity && hasInvalidProps;
-    return invalidContext ? [contextPropError(data)(path)] : [];
+    return invalidContext ? [contextPropError()(path)] : [];
   },
   (data, path) => {
     const voidVerbId = 'http://adlnet.gov/expapi/verbs/voided';
@@ -25,6 +25,6 @@ export default composeRules([
     );
     const verbIsVoid = data.verb && data.verb.id === voidVerbId;
     const hasVoidError = verbIsVoid && !objectIsStatementRef;
-    return hasVoidError ? [voidError(voidVerbId, data)(path)] : [];
+    return hasVoidError ? [voidError(voidVerbId)(path)] : [];
   },
 ]);

@@ -20,8 +20,8 @@ export default composeRules([
       Array.isArray(data.member) &&
       data.member.length > 0
     );
-    if (usedIfis.length > 1) return [ifiCountError(usedIfis, data)(path)];
+    if (usedIfis.length > 1) return [ifiCountError(usedIfis)(path)];
     const hasNoMembers = usedIfis.length === 0 && !usedMember;
-    return hasNoMembers ? [noMembersError(data)(path)] : [];
+    return hasNoMembers ? [noMembersError()(path)] : [];
   },
 ]);

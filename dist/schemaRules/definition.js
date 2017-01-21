@@ -51,7 +51,7 @@ exports.default = rulr_1.composeRules([
         var invalidComponents = unsupportedComponents.filter(function (component) { return data[component] !== undefined; });
         if (invalidComponents.length > 0)
             return [
-                errors_1.invalidComponentsError(invalidComponents, data)(path)
+                errors_1.invalidComponentsError(invalidComponents)(path)
             ];
         return [];
     },

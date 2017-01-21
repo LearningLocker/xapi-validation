@@ -11,12 +11,12 @@ exports.default = rulr_1.composeRules([
         if (data.objectType === 'Group') {
             var members = Array.isArray(data.member) ? data.member.length : 0;
             if (members !== 2)
-                return [errors_1.membersTypeError(data)(path)];
+                return [errors_1.membersTypeError()(path)];
             var invalidMembers = data.member.filter(function (member) {
                 return member.objectType !== 'Agent' && member.objectType !== undefined;
             });
             if (invalidMembers.length > 0)
-                return [errors_1.membersLengthError(data)(path)];
+                return [errors_1.membersLengthError()(path)];
         }
         return [];
     },

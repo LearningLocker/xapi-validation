@@ -6,7 +6,6 @@ import statementRules from '../helpers/statementRules';
 import collection from '../helpers/collection';
 import {
   actor,
-  object,
   verb,
   result,
   context,

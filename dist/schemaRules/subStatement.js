@@ -12,6 +12,6 @@ exports.default = rulr_1.composeRules([
     statementRules_1.default,
     function (data, path) {
         var objectIsSubStatement = (data.object && data.object.objectType === 'SubStatement');
-        return objectIsSubStatement ? [errors_1.subStatementError(data)(path)] : [];
+        return objectIsSubStatement ? [errors_1.subStatementError()(path)] : [];
     },
 ]);

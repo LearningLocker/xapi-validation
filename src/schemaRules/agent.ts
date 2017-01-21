@@ -7,8 +7,8 @@ export default composeRules([
   restrictToSchema(agentSchema),
   (data, path) => {
     const usedIfis = getUsedIfis(data);
-    if (usedIfis.length > 1) return [ifiCountError(usedIfis, data)(path)];
-    if (usedIfis.length === 0) return [noIfiError(data)(path)];
+    if (usedIfis.length > 1) return [ifiCountError(usedIfis)(path)];
+    if (usedIfis.length === 0) return [noIfiError()(path)];
     return [];
   },
 ]);

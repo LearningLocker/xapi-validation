@@ -1,6 +1,5 @@
 import Test from '../helpers/test';
 import describeRequiredProp from '../describeRequiredProp';
-import describeOptionalProp from '../describeOptionalProp';
 import { uuid } from '../factory';
 
 const validData = {

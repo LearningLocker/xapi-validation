@@ -1,5 +1,5 @@
 import {
-  restrictToSchema, restrictToCollection, composeRules, optional, required
+  restrictToSchema, restrictToCollection, composeRules, optional
 } from 'rulr';
 import { invalidComponentsError } from '../errors';
 import {
@@ -62,7 +62,7 @@ export default composeRules([
       component => data[component] !== undefined
     );
     if (invalidComponents.length > 0) return [
-      invalidComponentsError(invalidComponents, data)(path)
+      invalidComponentsError(invalidComponents)(path)
     ];
     return [];
   },

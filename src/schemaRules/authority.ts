@@ -9,13 +9,13 @@ export default composeRules([
     if (data.objectType === 'Group') {
       const members = Array.isArray(data.member) ? data.member.length : 0;
 
-      if (members !== 2) return [membersTypeError(data)(path)];
+      if (members !== 2) return [membersTypeError()(path)];
 
       const invalidMembers = data.member.filter((member: any) =>
         member.objectType !== 'Agent' && member.objectType !== undefined
       );
 
-      if (invalidMembers.length > 0) return [membersLengthError(data)(path)];
+      if (invalidMembers.length > 0) return [membersLengthError()(path)];
     }
     return [];
   },

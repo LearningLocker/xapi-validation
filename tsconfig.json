@@ -15,7 +15,9 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true
   },
   "includes": [
     "src/**/*"

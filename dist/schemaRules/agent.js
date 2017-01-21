@@ -9,9 +9,9 @@ exports.default = rulr_1.composeRules([
     function (data, path) {
         var usedIfis = getUsedIfis_1.default(data);
         if (usedIfis.length > 1)
-            return [errors_1.ifiCountError(usedIfis, data)(path)];
+            return [errors_1.ifiCountError(usedIfis)(path)];
         if (usedIfis.length === 0)
-            return [errors_1.noIfiError(data)(path)];
+            return [errors_1.noIfiError()(path)];
         return [];
     },
 ]);

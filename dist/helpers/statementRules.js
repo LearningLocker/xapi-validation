@@ -11,13 +11,13 @@ exports.default = rulr_1.composeRules([
             data.context.constructor === Object && (data.context.platform !== undefined ||
             data.context.revision !== undefined));
         var invalidContext = !objectIsActivity && hasInvalidProps;
-        return invalidContext ? [errors_1.contextPropError(data)(path)] : [];
+        return invalidContext ? [errors_1.contextPropError()(path)] : [];
     },
     function (data, path) {
         var voidVerbId = 'http://adlnet.gov/expapi/verbs/voided';
         var objectIsStatementRef = (data.object && data.object.objectType === 'StatementRef');
         var verbIsVoid = data.verb && data.verb.id === voidVerbId;
         var hasVoidError = verbIsVoid && !objectIsStatementRef;
-        return hasVoidError ? [errors_1.voidError(voidVerbId, data)(path)] : [];
+        return hasVoidError ? [errors_1.voidError(voidVerbId)(path)] : [];
     },
 ]);
