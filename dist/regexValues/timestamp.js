@@ -31,4 +31,4 @@ var EXT_ZONE = "(Z|" + EXT_P_ZONE + "|" + EXT_N_ZONE + ")";
 var EXT = "(" + EXT_DATE + "(T" + EXT_TIME + EXT_ZONE + ")?)";
 var TIMESTAMP = new RegExp("^(" + EXT + "|" + BASIC + ")$");
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = rulr_1.checkRegex(TIMESTAMP);
+exports.default = rulr_1.checkRegex(TIMESTAMP, rulr_1.checkTypeWarning('ISO Timestamp'));
