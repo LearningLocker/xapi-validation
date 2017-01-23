@@ -1,5 +1,6 @@
 import Test from '../helpers/test';
 import describeRequiredProp from '../describeRequiredProp';
+import itsInvalid from '../itsInvalid';
 import { uuid } from '../factory';
 
 const validData = {
@@ -8,5 +9,6 @@ const validData = {
 };
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   describeRequiredProp('id', uuid, validData, test);
 };

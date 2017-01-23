@@ -1,5 +1,6 @@
 import Test from '../helpers/test';
 import describeOptionalProp from '../describeOptionalProp';
+import itsInvalid from '../itsInvalid';
 import {
   score,
   booleanValue,
@@ -18,6 +19,7 @@ const validData = {
 };
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   describeOptionalProp('score', score, validData, test);
   describeOptionalProp('success', booleanValue, validData, test);
   describeOptionalProp('completion', booleanValue, validData, test);

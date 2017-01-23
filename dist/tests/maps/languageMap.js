@@ -6,6 +6,7 @@ var validData = {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
+    itsInvalid_1.default(10, 'not an object', test);
     itsInvalid_1.default({
         '-': 'test'
     }, 'containing invalid keys', test);

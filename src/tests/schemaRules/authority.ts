@@ -9,6 +9,7 @@ const agentMember = {
 };
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   itsInvalid({
     objectType: 'Group',
     member: [],

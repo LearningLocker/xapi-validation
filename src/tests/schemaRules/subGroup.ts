@@ -6,6 +6,7 @@ import agentSchema from '../helpers/agentSchema';
 import { agent } from '../factory';
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   itsInvalid({
     objectType: 'Group',
     name: 'Test',
