@@ -16,7 +16,7 @@
     "build": "./node_modules/typescript/bin/tsc",
     "build-watch": "./node_modules/typescript/bin/tsc --watch",
     "lint": "./node_modules/tslint/bin/tslint --project ./tsconfig.json -c ./tslint.json",
-    "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit=1",
+    "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit=0",
     "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "dependencies": {
