@@ -1,5 +1,6 @@
 import Test from '../helpers/test';
 import describeOptionalProp from '../describeOptionalProp';
+import itsInvalid from '../itsInvalid';
 import { scaledValue, numberValue } from '../factory';
 
 const validData = {
@@ -10,6 +11,7 @@ const validData = {
 };
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   describeOptionalProp('scaled', scaledValue, validData, test);
   describeOptionalProp('raw', numberValue, validData, test);
   describeOptionalProp('min', numberValue, validData, test);

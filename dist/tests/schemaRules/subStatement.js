@@ -6,6 +6,7 @@ var validStatementData_1 = require("../helpers/validStatementData");
 var factory_1 = require("../factory");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
+    itsInvalid_1.default(10, 'not an object', test);
     itsInvalid_1.default(Object.assign({}, validStatementData_1.default, {
         object: Object.assign({}, validStatementData_1.default, {
             objectType: 'SubStatement',

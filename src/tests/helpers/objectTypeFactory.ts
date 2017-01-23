@@ -1,10 +1,12 @@
 import 'mocha';
 import Test from '../helpers/test';
+import itsInvalid from '../itsInvalid';
 
 export type Type = (test: Test) => any;
 export type Types = {[key: string]: Type};
 
 export default (types: Types, defaultType: string, test: Test): void => {
+  itsInvalid(10, 'not an object', test);
   Object.keys(types).forEach((type: string) => {
     describe(`Object Type: ${type}`, () => {
       types[type]((data: any, valid: boolean): any => {

@@ -6,6 +6,7 @@ import validStatementData from '../helpers/validStatementData';
 import { subStatementObject } from '../factory';
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   itsInvalid(Object.assign({}, validStatementData, {
     object: Object.assign({}, validStatementData, {
       objectType: 'SubStatement',

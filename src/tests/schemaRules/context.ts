@@ -1,5 +1,6 @@
 import Test from '../helpers/test';
 import describeOptionalProp from '../describeOptionalProp';
+import itsInvalid from '../itsInvalid';
 import {
   uuid,
   actor,
@@ -33,6 +34,7 @@ const validData = {
 };
 
 export default (test: Test) => {
+  itsInvalid(10, 'not an object', test);
   describeOptionalProp('registration', uuid, validData, test);
   describeOptionalProp('instructor', actor, validData, test);
   describeOptionalProp('team', group, validData, test);

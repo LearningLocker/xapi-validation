@@ -1,5 +1,6 @@
 "use strict";
 var describeOptionalProp_1 = require("../describeOptionalProp");
+var itsInvalid_1 = require("../itsInvalid");
 var factory_1 = require("../factory");
 var validData = {
     score: {},
@@ -11,6 +12,7 @@ var validData = {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
+    itsInvalid_1.default(10, 'not an object', test);
     describeOptionalProp_1.default('score', factory_1.score, validData, test);
     describeOptionalProp_1.default('success', factory_1.booleanValue, validData, test);
     describeOptionalProp_1.default('completion', factory_1.booleanValue, validData, test);
