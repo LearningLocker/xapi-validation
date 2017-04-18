@@ -30,7 +30,7 @@
     "assert": "^1.4.1",
     "blanket": "1.1.9",
     "codecov": "^2.0.1",
-    "jscpd": "^0.6.6",
+    "jscpd": "^0.6.11",
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "tslint": "^5.0.0",
