@@ -16,7 +16,7 @@
     "build": "./node_modules/typescript/bin/tsc",
     "build-watch": "./node_modules/typescript/bin/tsc --watch",
     "lint": "./node_modules/tslint/bin/tslint --project ./tsconfig.json -c ./tslint.json",
-    "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit=0",
+    "duplication-limit": "./node_modules/jscpd/bin/jscpd --limit 1",
     "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "dependencies": {
@@ -30,7 +30,7 @@
     "assert": "^1.4.1",
     "blanket": "1.1.9",
     "codecov": "^2.0.1",
-    "jscpd": "^0.6.6",
+    "jscpd": "^0.6.11",
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "tslint": "^5.0.0",
