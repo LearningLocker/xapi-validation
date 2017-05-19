@@ -1,13 +1,9 @@
-import {
-  first,
-  checkType,
-  checkTypeWarning,
-  Rule,
-} from 'rulr';
+import { first, checkType, Rule } from 'rulr';
+import { createTypeWarning } from './warnings/TypeWarning';
 
-const checkNumber = (type: any, checker: (data: any) => boolean): Rule =>
+const checkNumber = (typeName: string, checker: (data: any) => boolean): Rule =>
   first(checkType(Number), (data, path) =>
-    checker(data) ? [] : [checkTypeWarning(type)(data)(path)]
+    checker(data) ? [] : [createTypeWarning(typeName)(data, path)]
   );
 
 export const anyValue: Rule = () => [];

@@ -1,7 +1,7 @@
 import {
-  restrictToSchema, restrictToCollection, composeRules, optional
+  restrictToSchema, restrictToCollection, composeRules, optional, Rule
 } from 'rulr';
-import { invalidComponentsError } from '../errors';
+import InvalidComponentsWarning from '../warnings/InvalidComponentsWarning';
 import {
   languageMap,
   iri,
@@ -62,8 +62,8 @@ export default composeRules([
       component => data[component] !== undefined
     );
     if (invalidComponents.length > 0) return [
-      invalidComponentsError(invalidComponents)(path)
+      new InvalidComponentsWarning(data, path, invalidComponents)
     ];
     return [];
   },
-]);
+]) as Rule;

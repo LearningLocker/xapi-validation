@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
 var factory_1 = require("../factory");
 var score = rulr_1.restrictToSchema({
@@ -7,7 +8,6 @@ var score = rulr_1.restrictToSchema({
     min: rulr_1.optional(factory_1.numberValue),
     max: rulr_1.optional(factory_1.numberValue),
 });
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = rulr_1.restrictToSchema({
     score: rulr_1.optional(score),
     success: rulr_1.optional(factory_1.booleanValue),

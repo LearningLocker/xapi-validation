@@ -1,6 +1,7 @@
-import { composeRules } from 'rulr';
+import { composeRules, Rule } from 'rulr';
 import { actor } from '../factory';
-import { membersTypeError, membersLengthError } from '../errors';
+import MembersTypeWarning from '../warnings/MembersTypeWarning';
+import MembersLengthWarning from '../warnings/MembersLengthWarning';
 
 export default composeRules([
   actor,
@@ -9,14 +10,14 @@ export default composeRules([
     if (data.objectType === 'Group') {
       const members = Array.isArray(data.member) ? data.member.length : 0;
 
-      if (members !== 2) return [membersTypeError()(path)];
+      if (members !== 2) return [new MembersTypeWarning(data, path)];
 
       const invalidMembers = data.member.filter((member: any) =>
         member.objectType !== 'Agent' && member.objectType !== undefined
       );
 
-      if (invalidMembers.length > 0) return [membersLengthError()(path)];
+      if (invalidMembers.length > 0) return [new MembersLengthWarning(data, path)];
     }
     return [];
   },
-]);
+]) as Rule;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var values = require("./values");
 var requireFile = function (file) {
     return function (ruleAccessor) {

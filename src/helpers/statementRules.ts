@@ -1,5 +1,6 @@
-import { composeRules } from 'rulr';
-import { contextPropError, voidError } from '../errors';
+import { composeRules, Rule } from 'rulr';
+import ContextPropWarning from '../warnings/ContextPropWarning';
+import VoidWarning from '../warnings/VoidWarning';
 
 export default composeRules([
   (data, path) => {
@@ -16,7 +17,7 @@ export default composeRules([
       )
     );
     const invalidContext = !objectIsActivity && hasInvalidProps;
-    return invalidContext ? [contextPropError()(path)] : [];
+    return invalidContext ? [new ContextPropWarning(data, path)] : [];
   },
   (data, path) => {
     const voidVerbId = 'http://adlnet.gov/expapi/verbs/voided';
@@ -25,6 +26,6 @@ export default composeRules([
     );
     const verbIsVoid = data.verb && data.verb.id === voidVerbId;
     const hasVoidError = verbIsVoid && !objectIsStatementRef;
-    return hasVoidError ? [voidError(voidVerbId)(path)] : [];
+    return hasVoidError ? [new VoidWarning(data, path, voidVerbId)] : [];
   },
-]);
+]) as Rule;

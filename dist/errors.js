@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
 exports.subStatementError = function () {
     return function (path) {

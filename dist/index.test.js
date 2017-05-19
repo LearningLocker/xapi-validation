@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var assert = require("assert");
 var index_1 = require("./index");
 var factory_1 = require("./tests/factory");

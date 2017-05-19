@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var statementRef = {
     objectType: 'StatementRef',
     id: '957f56b7-1d34-4b01-9408-3ffeb2053b28',
@@ -12,7 +13,6 @@ var revision = 'Test';
 var verb = {
     id: 'http://adlnet.gov/expapi/verbs/voided',
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
     it('should return an error when platform is set incorrectly', function () {
         return test({

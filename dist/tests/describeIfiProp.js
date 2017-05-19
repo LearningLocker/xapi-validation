@@ -1,6 +1,6 @@
 "use strict";
-require("mocha");
 Object.defineProperty(exports, "__esModule", { value: true });
+require("mocha");
 exports.default = function (prop, describer, test) {
     return describe(prop, function () {
         describer(function (value, valid) {

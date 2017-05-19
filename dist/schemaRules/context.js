@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
 var factory_1 = require("../factory");
 var contextActivities = rulr_1.restrictToSchema({
@@ -7,7 +8,6 @@ var contextActivities = rulr_1.restrictToSchema({
     grouping: rulr_1.optional(rulr_1.restrictToCollection(function () { return factory_1.activity; })),
     other: rulr_1.optional(rulr_1.restrictToCollection(function () { return factory_1.activity; })),
 });
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = rulr_1.restrictToSchema({
     registration: rulr_1.optional(factory_1.uuid),
     instructor: rulr_1.optional(factory_1.actor),

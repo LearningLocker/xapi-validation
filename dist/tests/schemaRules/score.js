@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var describeOptionalProp_1 = require("../describeOptionalProp");
 var itsInvalid_1 = require("../itsInvalid");
 var factory_1 = require("../factory");
@@ -8,7 +9,6 @@ var validData = {
     min: 0,
     max: 0,
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
     itsInvalid_1.default(10, 'not an object', test);
     describeOptionalProp_1.default('scaled', factory_1.scaledValue, validData, test);

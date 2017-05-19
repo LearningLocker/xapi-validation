@@ -3,11 +3,13 @@ import {
   restrictToSchema,
   restrictToCollection,
   optional,
+  Rule,
 } from 'rulr';
 import agentSchema from '../helpers/agentSchema';
 import getUsedIfis from '../helpers/getUsedIfis';
 import { actor } from '../factory';
-import { ifiCountError, noMembersError } from '../errors';
+import IfiCountWarning from '../warnings/IfiCountWarning';
+import NoMembersWarning from '../warnings/NoMembersWarning';
 
 export default composeRules([
   restrictToSchema(Object.assign({}, agentSchema, {
@@ -20,8 +22,8 @@ export default composeRules([
       Array.isArray(data.member) &&
       data.member.length > 0
     );
-    if (usedIfis.length > 1) return [ifiCountError(usedIfis)(path)];
+    if (usedIfis.length > 1) return [new IfiCountWarning(data, path, usedIfis)];
     const hasNoMembers = usedIfis.length === 0 && !usedMember;
-    return hasNoMembers ? [noMembersError()(path)] : [];
+    return hasNoMembers ? [new NoMembersWarning(data, path)] : [];
   },
-]);
+]) as Rule;

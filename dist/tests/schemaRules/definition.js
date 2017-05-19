@@ -1,10 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var describeInteractionProp_1 = require("../describeInteractionProp");
 var describeOptionalProp_1 = require("../describeOptionalProp");
 var factory_1 = require("../factory");
 var itsInvalid_1 = require("../itsInvalid");
 var validData = {};
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = function (test) {
     itsInvalid_1.default(10, 'not an object', test);
     describeOptionalProp_1.default('name', factory_1.languageMap, validData, test);

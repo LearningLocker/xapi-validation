@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var requireTest = function (rule) { return function (test) {
     return require(rule).default(test);
 }; };

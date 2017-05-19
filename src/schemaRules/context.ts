@@ -1,4 +1,4 @@
-import { restrictToSchema, restrictToCollection, optional } from 'rulr';
+import { restrictToSchema, restrictToCollection, optional, Rule } from 'rulr';
 import { activity,
   uuid,
   actor,
@@ -26,4 +26,4 @@ export default restrictToSchema({
   language: optional(language),
   statement: optional(statementRef),
   extensions: optional(extensions),
-});
+}) as Rule;
