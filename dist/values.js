@@ -1,8 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
-var checkNumber = function (type, checker) {
+var TypeWarning_1 = require("./warnings/TypeWarning");
+var checkNumber = function (typeName, checker) {
     return rulr_1.first(rulr_1.checkType(Number), function (data, path) {
-        return checker(data) ? [] : [rulr_1.checkTypeWarning(type)(data)(path)];
+        return checker(data) ? [] : [TypeWarning_1.createTypeWarning(typeName)(data, path)];
     });
 };
 exports.anyValue = function () { return []; };

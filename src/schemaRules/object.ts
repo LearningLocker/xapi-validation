@@ -1,3 +1,4 @@
+import { Rule } from 'rulr';
 import objectTypeFactory from '../helpers/objectTypeFactory';
 import {
   agent,
@@ -13,4 +14,4 @@ export default objectTypeFactory(() => ({
   Activity: activity,
   SubStatement: subStatement,
   StatementRef: statementRef,
-}), 'Activity');
+}), 'Activity') as Rule;

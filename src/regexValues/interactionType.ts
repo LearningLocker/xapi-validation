@@ -1,5 +1,6 @@
-import { checkRegex, checkTypeWarning } from 'rulr';
+import { checkRegex, Rule } from 'rulr';
+import { createTypeWarning } from '../warnings/TypeWarning';
 
 export default checkRegex(
   /^((choice)|(sequencing)|(likert)|(matching)|(performance)|(true-false)|(fill-in)|(long-fill-in)|(numeric)|(other))$/
-, checkTypeWarning('Interaction Type'));
+, createTypeWarning('Interaction Type')) as Rule;

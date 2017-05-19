@@ -1,7 +1,8 @@
 "use strict";
-var rulr_1 = require("rulr");
-var errors_1 = require("../errors");
 Object.defineProperty(exports, "__esModule", { value: true });
+var rulr_1 = require("rulr");
+var ContextPropWarning_1 = require("../warnings/ContextPropWarning");
+var VoidWarning_1 = require("../warnings/VoidWarning");
 exports.default = rulr_1.composeRules([
     function (data, path) {
         var objectIsActivity = (data.object != null &&
@@ -11,13 +12,13 @@ exports.default = rulr_1.composeRules([
             data.context.constructor === Object && (data.context.platform !== undefined ||
             data.context.revision !== undefined));
         var invalidContext = !objectIsActivity && hasInvalidProps;
-        return invalidContext ? [errors_1.contextPropError()(path)] : [];
+        return invalidContext ? [new ContextPropWarning_1.default(data, path)] : [];
     },
     function (data, path) {
         var voidVerbId = 'http://adlnet.gov/expapi/verbs/voided';
         var objectIsStatementRef = (data.object && data.object.objectType === 'StatementRef');
         var verbIsVoid = data.verb && data.verb.id === voidVerbId;
         var hasVoidError = verbIsVoid && !objectIsStatementRef;
-        return hasVoidError ? [errors_1.voidError(voidVerbId)(path)] : [];
+        return hasVoidError ? [new VoidWarning_1.default(data, path, voidVerbId)] : [];
     },
 ]);

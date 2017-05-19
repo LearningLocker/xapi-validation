@@ -1,4 +1,4 @@
-import { required, optional, restrictToCollection } from 'rulr';
+import { required, optional, restrictToCollection, Rule } from 'rulr';
 import {
   actor,
   verb,
@@ -10,7 +10,7 @@ import {
 } from '../factory';
 
 export default {
-  actor: required(actor),
+  actor: required(actor) as Rule,
   verb: required(verb),
   object: required(object),
   result: optional(result),

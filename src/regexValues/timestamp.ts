@@ -1,4 +1,5 @@
-import { checkRegex, checkTypeWarning } from 'rulr';
+import { checkRegex, Rule } from 'rulr';
+import { createTypeWarning } from '../warnings/TypeWarning';
 
 const YEAR = '(\\d{4})';
 const MONTH = '((0[1-9])|(1[012]))';
@@ -31,4 +32,4 @@ const EXT_ZONE = `(Z|${EXT_P_ZONE}|${EXT_N_ZONE})`;
 const EXT = `(${EXT_DATE}(T${EXT_TIME}${EXT_ZONE})?)`;
 const TIMESTAMP = new RegExp(`^(${EXT}|${BASIC})$`);
 
-export default checkRegex(TIMESTAMP, checkTypeWarning('ISO Timestamp'));
+export default checkRegex(TIMESTAMP, createTypeWarning('ISO Timestamp')) as Rule;

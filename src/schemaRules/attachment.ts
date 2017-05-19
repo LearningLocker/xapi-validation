@@ -1,4 +1,4 @@
-import { restrictToSchema, optional, required } from 'rulr';
+import { restrictToSchema, optional, required, Rule } from 'rulr';
 import { iri, languageMap, imt, integerValue, stringValue } from '../factory';
 
 export default restrictToSchema({
@@ -9,4 +9,4 @@ export default restrictToSchema({
   length: required(integerValue),
   sha2: required(stringValue),
   fileUrl: optional(iri),
-});
+}) as Rule;

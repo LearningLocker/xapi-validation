@@ -1,4 +1,4 @@
-import { restrictToSchema, optional } from 'rulr';
+import { restrictToSchema, optional, Rule } from 'rulr';
 import {
   scaledValue,
   numberValue,
@@ -22,4 +22,4 @@ export default restrictToSchema({
   response: optional(stringValue),
   duration: optional(duration),
   extensions: optional(extensions),
-});
+}) as Rule;

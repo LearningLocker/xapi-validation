@@ -1,4 +1,4 @@
-import { restrictToSchema, composeRules, optional } from 'rulr';
+import { restrictToSchema, composeRules, optional, Rule } from 'rulr';
 import statementSchema from '../helpers/statementSchema';
 import statementRules from '../helpers/statementRules';
 import { uuid, timestamp, authority, version } from '../factory';
@@ -11,4 +11,4 @@ export default composeRules([
     version: optional(version),
   })),
   statementRules,
-]);
+]) as Rule;

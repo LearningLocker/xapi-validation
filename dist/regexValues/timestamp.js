@@ -1,5 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
+var TypeWarning_1 = require("../warnings/TypeWarning");
 var YEAR = '(\\d{4})';
 var MONTH = '((0[1-9])|(1[012]))';
 var DAY = '((0[1-9])|([12]\\d)|(3[01]))';
@@ -30,5 +32,4 @@ var EXT_N_ZONE = "(\\-" + N_HOUR + EXT_MINUTE + "?)";
 var EXT_ZONE = "(Z|" + EXT_P_ZONE + "|" + EXT_N_ZONE + ")";
 var EXT = "(" + EXT_DATE + "(T" + EXT_TIME + EXT_ZONE + ")?)";
 var TIMESTAMP = new RegExp("^(" + EXT + "|" + BASIC + ")$");
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = rulr_1.checkRegex(TIMESTAMP, rulr_1.checkTypeWarning('ISO Timestamp'));
+exports.default = rulr_1.checkRegex(TIMESTAMP, TypeWarning_1.createTypeWarning('ISO Timestamp'));

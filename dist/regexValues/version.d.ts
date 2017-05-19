@@ -1,2 +1,3 @@
-declare var _default: (data: any, path: string[]) => string[];
+import { Rule } from 'rulr';
+declare var _default: Rule;
 export default _default;
