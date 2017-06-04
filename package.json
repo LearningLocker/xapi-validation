@@ -20,7 +20,7 @@
     "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "dependencies": {
-    "rulr": "^2.0.0"
+    "rulr": "^3.0.0"
   },
   "devDependencies": {
     "lodash": "^4.17.4",
