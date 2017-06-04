@@ -1,5 +1,5 @@
 import { Rule } from 'rulr';
-declare var _default: {
+declare const _default: {
     objectType: Rule;
     name: Rule;
     mbox: Rule;
