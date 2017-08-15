@@ -47,7 +47,7 @@ export default composeRules([
     moreInfo: optional(iri),
     extensions: optional(extensions),
     interactionType: optional(interactionType),
-    correctResponsesPattern: optional(stringValue),
+    correctResponsesPattern: optional(restrictToCollection(() => stringValue)),
     choices: optional(restrictToCollection(() => interactionComponent)),
     scale: optional(restrictToCollection(() => interactionComponent)),
     source: optional(restrictToCollection(() => interactionComponent)),
