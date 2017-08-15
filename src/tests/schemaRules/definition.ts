@@ -21,7 +21,7 @@ export default (test: Test) => {
   describeOptionalProp('moreInfo', iri, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);
   describeOptionalProp('interactionType', interactionType, validData, test);
-  describeOptionalProp('correctResponsePattern', stringValue, validData, test);
+  describeOptionalProp('correctResponsesPattern', stringValue, validData, test);
 
   describeInteractionProp(['choices'], 'choice', test);
   describeInteractionProp(['choices'], 'sequencing', test);

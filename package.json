@@ -4,9 +4,9 @@
   "description": "Validation library for the xAPI.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/LearningLocker/xapi-validation.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LearningLocker/xapi-validation.git"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha dist/**/*.test.js",

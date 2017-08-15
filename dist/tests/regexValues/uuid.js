@@ -5,6 +5,7 @@ var itsValid_1 = require("../itsValid");
 var validData = '957f56b7-1d34-4b01-9408-3ffeb2053b28';
 exports.default = function (test) {
     itsInvalid_1.default('957f56b7-1d34-4b01-9408-3ffeb2053b2', 'not a UUID', test);
+    itsInvalid_1.default('957e56b7-1d34-4b01-9408-3ffeb2053b2', 'not a UUID with non hex digits', test);
     itsInvalid_1.default(10, 'not a String', test);
     itsValid_1.default(validData, test);
 };

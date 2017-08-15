@@ -36,7 +36,7 @@ exports.default = rulr_1.composeRules([
         moreInfo: rulr_1.optional(factory_1.iri),
         extensions: rulr_1.optional(factory_1.extensions),
         interactionType: rulr_1.optional(factory_1.interactionType),
-        correctResponsePattern: rulr_1.optional(factory_1.stringValue),
+        correctResponsesPattern: rulr_1.optional(factory_1.stringValue),
         choices: rulr_1.optional(rulr_1.restrictToCollection(function () { return factory_1.interactionComponent; })),
         scale: rulr_1.optional(rulr_1.restrictToCollection(function () { return factory_1.interactionComponent; })),
         source: rulr_1.optional(rulr_1.restrictToCollection(function () { return factory_1.interactionComponent; })),
