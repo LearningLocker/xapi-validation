@@ -32,7 +32,7 @@ export default (test: Test) => {
   describeOptionalProp('correctResponsesPattern', correctResponsesPattern, {
     ...validData,
     type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
-    interactionType: "fill-in"
+    interactionType: 'fill-in'
   }, test);
 
   describeInteractionProp(['choices'], 'choice', test);
