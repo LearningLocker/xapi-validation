@@ -16,6 +16,12 @@ const correctResponsesPattern = collection(stringValue);
 
 export default (test: Test) => {
   itsInvalid(10, 'not an object', test);
+  itsInvalid({
+    type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
+    correctResponsesPattern: [
+      'Bob\'s your uncle'
+    ]
+  }, 'Missing interactionType', test);
 
   describeOptionalProp('name', languageMap, validData, test);
   describeOptionalProp('description', languageMap, validData, test);
@@ -23,7 +29,11 @@ export default (test: Test) => {
   describeOptionalProp('moreInfo', iri, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);
   describeOptionalProp('interactionType', interactionType, validData, test);
-  describeOptionalProp('correctResponsesPattern', correctResponsesPattern, validData, test);
+  describeOptionalProp('correctResponsesPattern', correctResponsesPattern, {
+    ...validData,
+    type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
+    interactionType: "fill-in"
+  }, test);
 
   describeInteractionProp(['choices'], 'choice', test);
   describeInteractionProp(['choices'], 'sequencing', test);

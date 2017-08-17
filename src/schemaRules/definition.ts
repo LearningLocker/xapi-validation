@@ -1,7 +1,8 @@
 import {
-  restrictToSchema, restrictToCollection, composeRules, optional, Rule
+  restrictToSchema, restrictToCollection, composeRules, optional, Rule, Warning
 } from 'rulr';
 import InvalidComponentsWarning from '../warnings/InvalidComponentsWarning';
+import MissingInteractionTypeWarning from '../warnings/MissingInteractionTypeWarning';
 import {
   languageMap,
   iri,
@@ -54,7 +55,7 @@ export default composeRules([
     target: optional(restrictToCollection(() => interactionComponent)),
     steps: optional(restrictToCollection(() => interactionComponent)),
   }),
-  (data, path) => {
+  (data, path): Warning[] => {
     if (data == null || data.constructor !== Object) return [];
     const interactionType = data.interactionType;
     const unsupportedComponents = getUnsupportedComponents(interactionType);
@@ -66,4 +67,17 @@ export default composeRules([
     ];
     return [];
   },
+  (data, path): Warning[] => {
+    if (data == null || data.constructor !== Object) return [];
+    const missingInteractionType = (
+      data.correctResponsesPattern !== undefined &&
+      data.interactionType === undefined
+    );
+    if (missingInteractionType) {
+      return [
+        new MissingInteractionTypeWarning(data, path)
+      ];
+    }
+    return [];
+  }
 ]) as Rule;

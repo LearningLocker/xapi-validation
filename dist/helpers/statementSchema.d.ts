@@ -1,5 +1,5 @@
 import { Rule } from 'rulr';
-declare var _default: {
+declare const _default: {
     actor: Rule;
     verb: Rule;
     object: Rule;
