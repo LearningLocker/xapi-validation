@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
 var InvalidComponentsWarning_1 = require("../warnings/InvalidComponentsWarning");
+var MissingInteractionTypeWarning_1 = require("../warnings/MissingInteractionTypeWarning");
 var factory_1 = require("../factory");
 var getSupportedComponents = function (interactionType) {
     switch (interactionType) {
@@ -55,4 +56,16 @@ exports.default = rulr_1.composeRules([
             ];
         return [];
     },
+    function (data, path) {
+        if (data == null || data.constructor !== Object)
+            return [];
+        var missingInteractionType = (data.correctResponsesPattern !== undefined &&
+            data.interactionType === undefined);
+        if (missingInteractionType) {
+            return [
+                new MissingInteractionTypeWarning_1.default(data, path)
+            ];
+        }
+        return [];
+    }
 ]);
