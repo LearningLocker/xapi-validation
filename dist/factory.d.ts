@@ -12,6 +12,7 @@ export declare const definition: Rule;
 export declare const duration: Rule;
 export declare const extensions: Rule;
 export declare const group: Rule;
+export declare const groupAuthority: Rule;
 export declare const imt: Rule;
 export declare const integerValue: Rule;
 export declare const interactionComponent: Rule;
