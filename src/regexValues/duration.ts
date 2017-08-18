@@ -3,5 +3,5 @@ import { checkRegex, Rule } from 'rulr';
 import { createTypeWarning } from '../warnings/TypeWarning';
 
 export default checkRegex(
-  /^P((\d+([\.,]\d+)?Y)?(\d+([\.,]\d+)?M)?(\d+([\.,]\d+)?W)?(\d+([\.,]\d+)?D)?)?(T(\d+([\.,]\d+)?H)?(\d+([\.,]\d+)?M)?(\d+([\.,]\d+)?S)?)?$/i
+  /^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$/
 , createTypeWarning('ISO Duration')) as Rule;
