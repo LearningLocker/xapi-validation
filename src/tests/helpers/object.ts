@@ -14,4 +14,4 @@ export default (additionalTypes: Types) =>
       Group: group,
       Activity: activity,
       StatementRef: statementRef,
-    }, additionalTypes), 'Activity', test);
+    }, additionalTypes), 'Activity', test, { id: 'http://www.example.org/activity' });

@@ -6,4 +6,4 @@ export default (test: Test) =>
   objectTypeFactory({
     Agent: agent,
     Group: group,
-  }, 'Agent', test);
+  }, 'Agent', test, { mbox: 'mailto:test@example.org' });

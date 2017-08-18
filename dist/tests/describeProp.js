@@ -9,8 +9,9 @@ exports.default = function (missingValid, description) {
         });
         describe(prop, function () {
             describer(function (value, valid) {
-                var data = (_a = {}, _a[prop] = value, _a);
-                test(Object.assign({}, validData, data), valid);
+                var overrides = (_a = {}, _a[prop] = value, _a);
+                var data = Object.assign({}, validData, overrides);
+                test(data, valid);
                 var _a;
             });
         });

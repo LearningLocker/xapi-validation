@@ -11,6 +11,10 @@ const agentMember = {
 export default (test: Test) => {
   itsInvalid(10, 'not an object', test);
   itsInvalid({
+    objectType: 'InvalidObjectType',
+    mbox: 'mailto:test@example.org',
+  }, 'uses invalid objectType', test);
+  itsInvalid({
     objectType: 'Group',
     member: [],
   }, 'contains no members', test);

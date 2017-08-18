@@ -11,11 +11,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
-var default_1 = (function (_super) {
-    __extends(default_1, _super);
-    function default_1() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var RestrictedValueWarning = (function (_super) {
+    __extends(RestrictedValueWarning, _super);
+    function RestrictedValueWarning(data, path, requiredValue) {
+        var _this = _super.call(this, data, path) || this;
+        _this.requiredValue = requiredValue;
+        return _this;
     }
-    return default_1;
+    return RestrictedValueWarning;
 }(rulr_1.Warning));
-exports.default = default_1;
+exports.default = RestrictedValueWarning;

@@ -7,7 +7,6 @@ import { iri, definition } from '../factory';
 const validData = {
   objectType: 'Activity',
   id: 'http://www.example.com',
-  definition: {},
 };
 
 export default (test: Test) => {

@@ -1,6 +1,7 @@
 import Test from '../helpers/test';
 import describeOptionalProp from '../describeOptionalProp';
 import itsInvalid from '../itsInvalid';
+import objectTypeFactory from '../helpers/objectTypeFactory';
 import {
   uuid,
   actor,
@@ -37,11 +38,19 @@ export default (test: Test) => {
   itsInvalid(10, 'not an object', test);
   describeOptionalProp('registration', uuid, validData, test);
   describeOptionalProp('instructor', actor, validData, test);
-  describeOptionalProp('team', group, validData, test);
+  describeOptionalProp('team', (test: Test) => {
+    return objectTypeFactory({
+      Group: group
+    }, 'Group', test, {});
+  }, validData, test);
   describeOptionalProp('contextActivities', contextActivities, validData, test);
   describeOptionalProp('revision', stringValue, validData, test);
   describeOptionalProp('platform', stringValue, validData, test);
   describeOptionalProp('language', language, validData, test);
-  describeOptionalProp('statement', statementRef, validData, test);
+  describeOptionalProp('statement', (test: Test) => {
+    return objectTypeFactory({
+      StatementRef: statementRef
+    }, 'StatementRef', test, {});
+  }, validData, test);
   describeOptionalProp('extensions', extensions, validData, test);
 };
