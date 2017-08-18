@@ -24,6 +24,26 @@ export default (test: Test) => {
   }, 'contains too few members', test);
   itsInvalid({
     objectType: 'Group',
+    member: [agentMember, agentMember],
+    mbox: agentMember.mbox
+  }, 'contains an mbox on a group', test);
+  itsInvalid({
+    objectType: 'Group',
+    member: [agentMember, agentMember],
+    account: {name: 'test', homePage: 'http://example.org'}
+  }, 'contains an account on a group', test);
+  itsInvalid({
+    objectType: 'Group',
+    member: [agentMember, agentMember],
+    mbox_sha1sum: 'a9993e364706816aba3e25717850c26c9cd0d89d'
+  }, 'contains an mbox_sha1sum on a group', test);
+  itsInvalid({
+    objectType: 'Group',
+    member: [agentMember, agentMember],
+    openid: 'http://example.org/test'
+  }, 'contains an openid on a group', test);
+  itsInvalid({
+    objectType: 'Group',
     member: [agentMember, agentMember, agentMember],
   }, 'contains too many members', test);
   itsInvalid({

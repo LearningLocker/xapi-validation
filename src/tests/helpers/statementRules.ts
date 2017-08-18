@@ -20,11 +20,23 @@ export default (test: Test) => {
       context: { platform },
     }, false)
   );
+  it('should not return an error when platform is set and object has no objectType', () =>
+    test({
+      object: { id: activity.id },
+      context: { platform },
+    }, true)
+  );
   it('should return an error when revision is set incorrectly', () =>
     test({
       object: statementRef,
       context: { revision },
     }, false)
+  );
+  it('should not return an error when revision is set and object has no objectType', () =>
+    test({
+      object: { id: activity.id },
+      context: { revision },
+    }, true)
   );
   it('should not return an error when context is used correctly', () =>
     test({

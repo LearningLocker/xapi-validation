@@ -1,20 +1,17 @@
 import { composeRules, Rule } from 'rulr';
 import ContextPropWarning from '../warnings/ContextPropWarning';
 import VoidWarning from '../warnings/VoidWarning';
+import { isObject } from 'lodash';
 
 export default composeRules([
   (data, path) => {
     const objectIsActivity = (
-      data.object != null &&
-      data.object.constructor === Object &&
-      data.object.objectType === 'Activity'
+      isObject(data.object) &&
+      (data.object.objectType === 'Activity' || data.object.objectType === undefined)
     );
     const hasInvalidProps = (
-      data.context != null &&
-      data.context.constructor === Object && (
-        data.context.platform !== undefined ||
-        data.context.revision !== undefined
-      )
+      isObject(data.context) &&
+      (data.context.platform !== undefined || data.context.revision !== undefined)
     );
     const invalidContext = !objectIsActivity && hasInvalidProps;
     return invalidContext ? [new ContextPropWarning(data, path)] : [];
