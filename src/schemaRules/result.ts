@@ -1,4 +1,4 @@
-import { restrictToSchema, optional, Rule } from 'rulr';
+import { restrictToSchema, optional, Rule, composeRules, Warning } from 'rulr';
 import {
   scaledValue,
   numberValue,
@@ -7,13 +7,42 @@ import {
   duration,
   extensions,
 } from '../factory';
+import RawLessThanMinWarning from '../warnings/RawLessThanMinWarning';
+import RawMoreThanMaxWarning from '../warnings/RawMoreThanMaxWarning';
+import MinMoreThanMaxWarning from '../warnings/MinMoreThanMaxWarning';
 
-const score = restrictToSchema({
-  scaled: optional(scaledValue),
-  raw: optional(numberValue),
-  min: optional(numberValue),
-  max: optional(numberValue),
-});
+const checkRawMoreThanMin = (data: any, path: string[]): Warning[] => {
+  if (data.raw !== undefined && data.min !== undefined && data.raw < data.min) {
+    return [new RawLessThanMinWarning(data, path, data.raw, data.min)];
+  }
+  return [];
+};
+
+const checkRawLessThanMax = (data: any, path: string[]): Warning[] => {
+  if (data.raw !== undefined && data.max !== undefined && data.raw > data.max) {
+    return [new RawMoreThanMaxWarning(data, path, data.raw, data.max)];
+  }
+  return [];
+};
+
+const checkMinLessThanMax = (data: any, path: string[]): Warning[] => {
+  if (data.min !== undefined && data.max !== undefined && data.min > data.max) {
+    return [new MinMoreThanMaxWarning(data, path, data.min, data.max)];
+  }
+  return [];
+};
+
+const score = composeRules([
+  restrictToSchema({
+    scaled: optional(scaledValue),
+    raw: optional(numberValue),
+    min: optional(numberValue),
+    max: optional(numberValue),
+  }),
+  checkRawMoreThanMin,
+  checkRawLessThanMax,
+  checkMinLessThanMax,
+]);
 
 export default restrictToSchema({
   score: optional(score),
