@@ -9,8 +9,9 @@ export default (missingValid: boolean, description: string) =>
     );
     describe(prop, () => {
       describer((value, valid) => {
-        const data = { [prop]: value };
-        test(Object.assign({}, validData, data), valid);
+        const overrides = { [prop]: value };
+        const data = Object.assign({}, validData, overrides);
+        test(data, valid);
       });
     });
   };

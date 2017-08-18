@@ -1,5 +1,6 @@
 import { restrictToSchema, restrictToCollection, optional, Rule } from 'rulr';
-import { activity,
+import {
+  activity,
   uuid,
   actor,
   group,

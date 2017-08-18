@@ -9,6 +9,6 @@ exports.default = function (additionalTypes) {
             Group: factory_1.group,
             Activity: factory_1.activity,
             StatementRef: factory_1.statementRef,
-        }, additionalTypes), 'Activity', test);
+        }, additionalTypes), 'Activity', test, { id: 'http://www.example.org/activity' });
     };
 };

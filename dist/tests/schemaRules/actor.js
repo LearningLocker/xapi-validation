@@ -6,5 +6,5 @@ exports.default = function (test) {
     return objectTypeFactory_1.default({
         Agent: factory_1.agent,
         Group: factory_1.group,
-    }, 'Agent', test);
+    }, 'Agent', test, { mbox: 'mailto:test@example.org' });
 };

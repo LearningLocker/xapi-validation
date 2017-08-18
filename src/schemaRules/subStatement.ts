@@ -1,12 +1,12 @@
 import { restrictToSchema, composeRules, optional, Rule } from 'rulr';
 import statementSchema from '../helpers/statementSchema';
 import statementRules from '../helpers/statementRules';
-import { stringValue } from '../factory';
+import restrictToValue from '../helpers/restrictToValue';
 import SubStatementWarning from '../warnings/SubStatementWarning';
 
 export default composeRules([
   restrictToSchema(Object.assign({}, statementSchema, {
-    objectType: optional(stringValue),
+    objectType: optional(restrictToValue('SubStatement')),
   })),
   statementRules,
   (data, path) => {

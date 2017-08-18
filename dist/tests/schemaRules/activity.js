@@ -7,7 +7,6 @@ var factory_1 = require("../factory");
 var validData = {
     objectType: 'Activity',
     id: 'http://www.example.com',
-    definition: {},
 };
 exports.default = function (test) {
     itsInvalid_1.default(10, 'not an object', test);

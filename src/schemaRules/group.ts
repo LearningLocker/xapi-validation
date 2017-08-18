@@ -7,13 +7,15 @@ import {
 } from 'rulr';
 import agentSchema from '../helpers/agentSchema';
 import getUsedIfis from '../helpers/getUsedIfis';
+import restrictToValue from '../helpers/restrictToValue';
 import { actor } from '../factory';
 import IfiCountWarning from '../warnings/IfiCountWarning';
 import NoMembersWarning from '../warnings/NoMembersWarning';
 
 export default composeRules([
   restrictToSchema(Object.assign({}, agentSchema, {
-    member: optional(restrictToCollection(() => actor))
+    objectType: optional(restrictToValue('Group')),
+    member: optional(restrictToCollection(() => actor)),
   })),
   (data, path) => {
     const usedIfis = getUsedIfis(data);

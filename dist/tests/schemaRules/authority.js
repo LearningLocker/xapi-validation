@@ -10,6 +10,10 @@ var agentMember = {
 exports.default = function (test) {
     itsInvalid_1.default(10, 'not an object', test);
     itsInvalid_1.default({
+        objectType: 'InvalidObjectType',
+        mbox: 'mailto:test@example.org',
+    }, 'uses invalid objectType', test);
+    itsInvalid_1.default({
         objectType: 'Group',
         member: [],
     }, 'contains no members', test);

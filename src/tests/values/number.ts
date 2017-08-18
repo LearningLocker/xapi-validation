@@ -4,7 +4,7 @@ import itsValid from '../itsValid';
 
 export default (test: Test) => {
   itsInvalid('', 'not a Number', test);
-  itsValid(-1.1, test);
+  itsValid(-1.12345678, test);
   itsValid(0, test);
-  itsValid(1.1, test);
+  itsValid(1.12345678, test);
 };
