@@ -1,4 +1,4 @@
-declare var _default: {
+declare const _default: {
     actor: {
         objectType: string;
         mbox: string;
