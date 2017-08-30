@@ -40,7 +40,7 @@ exports.default = function (test) {
         objectType: 'Group',
         member: [agentMember, agentMember],
         openid: 'http://example.org/test'
-    }, 'contains an mbox on a group', test);
+    }, 'contains an openid on a group', test);
     itsInvalid_1.default({
         objectType: 'Group',
         member: [agentMember, agentMember, agentMember],
