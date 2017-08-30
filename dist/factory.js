@@ -23,6 +23,7 @@ exports.definition = requireRule('./schemaRules/definition');
 exports.duration = requireRule('./regexValues/duration');
 exports.extensions = requireMap(function (maps) { return maps.extensions; });
 exports.group = requireRule('./schemaRules/group');
+exports.groupAuthority = requireRule('./schemaRules/groupAuthority');
 exports.imt = requireRule('./regexValues/imt');
 exports.integerValue = values.integerValue;
 exports.interactionComponent = requireRule('./schemaRules/interactionComponent');

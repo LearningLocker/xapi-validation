@@ -22,6 +22,7 @@ export const definition = requireRule('./schemaRules/definition');
 export const duration = requireRule('./regexValues/duration');
 export const extensions = requireMap(maps => maps.extensions);
 export const group = requireRule('./schemaRules/group');
+export const groupAuthority = requireRule('./schemaRules/groupAuthority');
 export const imt = requireRule('./regexValues/imt');
 export const integerValue = values.integerValue;
 export const interactionComponent = requireRule('./schemaRules/interactionComponent');

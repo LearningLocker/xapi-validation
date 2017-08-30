@@ -3,14 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var rulr_1 = require("rulr");
 var ContextPropWarning_1 = require("../warnings/ContextPropWarning");
 var VoidWarning_1 = require("../warnings/VoidWarning");
+var lodash_1 = require("lodash");
 exports.default = rulr_1.composeRules([
     function (data, path) {
-        var objectIsActivity = (data.object != null &&
-            data.object.constructor === Object &&
-            data.object.objectType === 'Activity');
-        var hasInvalidProps = (data.context != null &&
-            data.context.constructor === Object && (data.context.platform !== undefined ||
-            data.context.revision !== undefined));
+        var objectIsActivity = (lodash_1.isObject(data.object) &&
+            (data.object.objectType === 'Activity' || data.object.objectType === undefined));
+        var hasInvalidProps = (lodash_1.isObject(data.context) &&
+            (data.context.platform !== undefined || data.context.revision !== undefined));
         var invalidContext = !objectIsActivity && hasInvalidProps;
         return invalidContext ? [new ContextPropWarning_1.default(data, path)] : [];
     },

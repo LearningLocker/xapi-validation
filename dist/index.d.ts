@@ -1,3 +1,3 @@
 import { Warning } from 'rulr';
-declare var _default: (data: any) => Warning[];
+declare const _default: (data: any) => Warning[];
 export default _default;
