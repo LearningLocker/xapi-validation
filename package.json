@@ -1,6 +1,6 @@
 {
   "name": "xapi-validation",
-  "version": "2.0.1",
+  "version": "0.0.0-development",
   "description": "Validation library for the xAPI.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -8,6 +8,11 @@
     "type": "git",
     "url": "https://github.com/LearningLocker/xapi-validation.git"
   },
+  "files": [
+    "dist",
+    ".env.example",
+    "package-lock.json"
+  ],
   "scripts": {
     "acp": "git add -A && npm run commit && git push",
     "commit": "git-cz",
@@ -16,7 +21,8 @@
     "cover": "nyc --lines 95 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
-    "duplication": "jscpd"
+    "duplication": "jscpd",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
     "commitizen": {
@@ -38,6 +44,7 @@
     "mocha": "^3.4.0",
     "nyc": "^11.2.1",
     "rimraf": "^2.6.2",
+    "semantic-release": "^8.0.3",
     "tslint": "^5.0.0",
     "typescript": "^2.2.2"
   }
