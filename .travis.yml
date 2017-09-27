@@ -1,11 +1,24 @@
 language: node_js
 node_js: node
 sudo: false
+
+notifications:
+  email: false
+
+before_install:
+  - npm install -g greenkeeper-lockfile@1
+
+before_script:
+  - greenkeeper-lockfile-update
+  - npm prune
+
 script:
-  - npm test
   - npm run build
-  - mkdir coverage
   - npm run cover
-  - npm run codecov
   - npm run lint
-  - npm run duplication-limit
+  - npm run duplication -- --limit=0.01
+
+after_success:
+  - npm prune --production
+  - npm run semantic-release
+  - greenkeeper-lockfile-upload
