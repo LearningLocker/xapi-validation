@@ -9,12 +9,19 @@
     "url": "https://github.com/LearningLocker/xapi-validation.git"
   },
   "scripts": {
+    "acp": "git add -A && npm run commit && git push",
+    "commit": "git-cz",
     "build": "tsc",
     "test": "mocha dist/**/*.test.js",
     "cover": "nyc --lines 95 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
     "duplication": "jscpd"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "rulr": "^3.0.0"
@@ -24,6 +31,8 @@
     "@types/mocha": "^2.2.35",
     "@types/node": "^8.0.0",
     "assert": "^1.4.1",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
     "lodash": "^4.17.4",
     "mocha": "^3.4.0",
