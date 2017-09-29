@@ -7,11 +7,13 @@ import {
   duration,
   extensions,
 } from '../factory';
+import { isPlainObject } from 'lodash';
 import RawLessThanMinWarning from '../warnings/RawLessThanMinWarning';
 import RawMoreThanMaxWarning from '../warnings/RawMoreThanMaxWarning';
 import MinMoreThanMaxWarning from '../warnings/MinMoreThanMaxWarning';
 
 const checkRawMoreThanMin = (data: any, path: string[]): Warning[] => {
+  if (!isPlainObject(data)) return [];
   if (data.raw !== undefined && data.min !== undefined && data.raw < data.min) {
     return [new RawLessThanMinWarning(data, path, data.raw, data.min)];
   }
@@ -19,6 +21,7 @@ const checkRawMoreThanMin = (data: any, path: string[]): Warning[] => {
 };
 
 const checkRawLessThanMax = (data: any, path: string[]): Warning[] => {
+  if (!isPlainObject(data)) return [];
   if (data.raw !== undefined && data.max !== undefined && data.raw > data.max) {
     return [new RawMoreThanMaxWarning(data, path, data.raw, data.max)];
   }
@@ -26,6 +29,7 @@ const checkRawLessThanMax = (data: any, path: string[]): Warning[] => {
 };
 
 const checkMinLessThanMax = (data: any, path: string[]): Warning[] => {
+  if (!isPlainObject(data)) return [];
   if (data.min !== undefined && data.max !== undefined && data.min > data.max) {
     return [new MinMoreThanMaxWarning(data, path, data.min, data.max)];
   }

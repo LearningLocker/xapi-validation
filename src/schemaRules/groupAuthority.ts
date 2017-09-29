@@ -3,7 +3,7 @@ import { actor } from '../factory';
 import MembersTypeWarning from '../warnings/MembersTypeWarning';
 import MembersLengthWarning from '../warnings/MembersLengthWarning';
 import restrictToValue from '../helpers/restrictToValue';
-import { isObject } from 'lodash';
+import { isPlainObject } from 'lodash';
 
 export default composeRules([
   restrictToSchema({
@@ -11,7 +11,7 @@ export default composeRules([
     member: optional(restrictToCollection(() => actor))
   }),
   (data, path) => {
-    if (!isObject(data)) return [];
+    if (!isPlainObject(data)) return [];
     const members = Array.isArray(data.member) ? data.member.length : 0;
 
     if (members !== 2) return [new MembersTypeWarning(data, path)];
