@@ -5,6 +5,7 @@ import {
   optional,
   Rule,
 } from 'rulr';
+import { isPlainObject } from 'lodash';
 import agentSchema from '../helpers/agentSchema';
 import getUsedIfis from '../helpers/getUsedIfis';
 import restrictToValue from '../helpers/restrictToValue';
@@ -18,6 +19,7 @@ export default composeRules([
     member: optional(restrictToCollection(() => actor)),
   })),
   (data, path) => {
+    if (!isPlainObject(data)) return [];
     const usedIfis = getUsedIfis(data);
     const usedMember = (
       data.member != null &&

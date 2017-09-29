@@ -1,6 +1,7 @@
 import {
   restrictToSchema, restrictToCollection, composeRules, optional, Rule, Warning
 } from 'rulr';
+import { isPlainObject } from 'lodash';
 import InvalidComponentsWarning from '../warnings/InvalidComponentsWarning';
 import MissingInteractionTypeWarning from '../warnings/MissingInteractionTypeWarning';
 import {
@@ -56,7 +57,7 @@ export default composeRules([
     steps: optional(restrictToCollection(() => interactionComponent)),
   }),
   (data, path): Warning[] => {
-    if (data == null || data.constructor !== Object) return [];
+    if (!isPlainObject(data)) return [];
     const interactionType = data.interactionType;
     const unsupportedComponents = getUnsupportedComponents(interactionType);
     const invalidComponents = unsupportedComponents.filter(
@@ -68,7 +69,7 @@ export default composeRules([
     return [];
   },
   (data, path): Warning[] => {
-    if (data == null || data.constructor !== Object) return [];
+    if (!isPlainObject(data)) return [];
     const missingInteractionType = (
       data.correctResponsesPattern !== undefined &&
       data.interactionType === undefined
