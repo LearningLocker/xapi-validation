@@ -41,7 +41,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
     "lodash": "^4.17.4",
-    "mocha": "^3.4.0",
+    "mocha": "^4.0.0",
     "nyc": "^11.2.1",
     "rimraf": "^2.6.2",
     "semantic-release": "^8.0.3",
