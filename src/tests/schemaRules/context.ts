@@ -36,6 +36,7 @@ const validData = {
 
 export default (test: Test) => {
   itsInvalid(10, 'not an object', test);
+  itsInvalid({ team: null }, 'team must be an object', test);
   describeOptionalProp('registration', uuid, validData, test);
   describeOptionalProp('instructor', actor, validData, test);
   describeOptionalProp('team', (test: Test) => {
