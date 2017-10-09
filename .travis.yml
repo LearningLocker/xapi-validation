@@ -5,11 +5,7 @@ sudo: false
 notifications:
   email: false
 
-before_install:
-  - npm install -g greenkeeper-lockfile@1
-
 before_script:
-  - greenkeeper-lockfile-update
   - npm prune
 
 script:
@@ -21,4 +17,3 @@ script:
 after_success:
   - npm prune --production
   - npm run semantic-release
-  - greenkeeper-lockfile-upload
