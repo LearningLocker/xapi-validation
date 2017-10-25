@@ -33,19 +33,19 @@
     "rulr": "^3.0.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.45",
-    "@types/mocha": "^2.2.35",
-    "@types/node": "^8.0.0",
-    "assert": "^1.4.1",
-    "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0",
-    "jscpd": "^0.6.10",
-    "lodash": "^4.17.4",
-    "mocha": "^3.4.0",
-    "nyc": "^11.2.1",
-    "rimraf": "^2.6.2",
-    "semantic-release": "^8.0.3",
-    "tslint": "^5.0.0",
-    "typescript": "^2.2.2"
+    "@types/lodash": "4.14.79",
+    "@types/mocha": "2.2.43",
+    "@types/node": "8.0.47",
+    "assert": "1.4.1",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "jscpd": "0.6.15",
+    "lodash": "4.17.4",
+    "mocha": "3.5.3",
+    "nyc": "11.3.0",
+    "rimraf": "2.6.2",
+    "semantic-release": "8.2.2",
+    "tslint": "5.8.0",
+    "typescript": "2.5.3"
   }
 }
