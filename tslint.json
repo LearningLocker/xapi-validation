@@ -15,7 +15,6 @@
     "max-line-length": [true, 120],
     "max-file-line-count": [true, 300],
     "no-unused-expression": true,
-    "no-unused-new": true,
     "no-duplicate-variable":true,
     "no-eval":true,
     "no-internal-module":true,
