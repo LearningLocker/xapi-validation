@@ -17,7 +17,7 @@
     "acp": "git add -A && npm run commit && git push",
     "commit": "git-cz",
     "build": "tsc",
-    "test": "mocha dist/**/*.test.js",
+    "test": "mocha dist/**/*.test.js --exit",
     "cover": "nyc --lines 95 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
