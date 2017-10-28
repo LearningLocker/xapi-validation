@@ -44,7 +44,7 @@
     "mocha": "4.0.1",
     "nyc": "11.3.0",
     "rimraf": "2.6.2",
-    "semantic-release": "8.2.3",
+    "semantic-release": "9.0.0",
     "tslint": "5.8.0",
     "typescript": "2.5.3"
   }
