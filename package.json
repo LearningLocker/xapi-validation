@@ -34,7 +34,7 @@
     "rulr": "^4.0.1"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.84",
+    "@types/lodash": "4.14.85",
     "@types/mocha": "2.2.44",
     "@types/node": "8.0.51",
     "assert": "1.4.1",
