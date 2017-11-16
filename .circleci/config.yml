@@ -1,0 +1,44 @@
+version: 2
+machine:
+  services:
+    - docker
+
+jobs:
+  build:
+    docker:
+      - image: node:8.8.0
+    environment:
+      - NPM_CONFIG_LOGLEVEL: warn
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Installing Dependencies
+          command: npm install
+      - run:
+          name: Pruning Dependencies
+          command: npm prune
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Compiling Code
+          command: npm run build
+      - run:
+          name: Running tests
+          command: npm run cover
+      - run:
+          name: Linting Code
+          command: npm run lint
+      - run:
+          name: Checking Code Duplication
+          command: npm run duplication -- --limit 1
+      - deploy:
+          name: Semantic Release
+          command: npm run semantic-release || true
