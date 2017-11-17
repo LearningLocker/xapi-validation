@@ -24,6 +24,9 @@
     "duplication": "jscpd",
     "semantic-release": "semantic-release"
   },
+  "release": {
+    "verifyConditions": "condition-circle"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -39,6 +42,7 @@
     "@types/node": "8.0.53",
     "assert": "1.4.1",
     "commitizen": "2.9.6",
+    "condition-circle": "1.5.0",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
     "mocha": "4.0.1",
