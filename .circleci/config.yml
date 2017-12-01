@@ -41,4 +41,7 @@ jobs:
           command: npm run duplication -- --limit 1
       - deploy:
           name: Semantic Release
-          command: npm run semantic-release || true
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+               npm run semantic-release || true;
+            fi

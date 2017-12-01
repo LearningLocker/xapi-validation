@@ -25,7 +25,10 @@
     "semantic-release": "semantic-release"
   },
   "release": {
-    "verifyConditions": "condition-circle"
+    "verifyConditions": [
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ]
   },
   "config": {
     "commitizen": {
@@ -37,12 +40,13 @@
     "rulr": "^4.0.1"
   },
   "devDependencies": {
+    "@semantic-release/github": "2.0.0",
+    "@semantic-release/npm": "2.2.0",
     "@types/lodash": "4.14.85",
     "@types/mocha": "2.2.44",
     "@types/node": "8.0.53",
     "assert": "1.4.1",
     "commitizen": "2.9.6",
-    "condition-circle": "1.5.0",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
     "mocha": "4.0.1",
