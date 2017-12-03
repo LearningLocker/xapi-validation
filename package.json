@@ -42,7 +42,7 @@
   "devDependencies": {
     "@semantic-release/github": "2.1.0",
     "@semantic-release/npm": "2.3.0",
-    "@types/lodash": "4.14.86",
+    "@types/lodash": "4.14.87",
     "@types/mocha": "2.2.44",
     "@types/node": "8.0.53",
     "assert": "1.4.1",
