@@ -40,7 +40,7 @@
     "rulr": "^4.0.1"
   },
   "devDependencies": {
-    "@semantic-release/github": "2.1.0",
+    "@semantic-release/github": "2.2.0",
     "@semantic-release/npm": "2.3.0",
     "@types/lodash": "4.14.87",
     "@types/mocha": "2.2.44",
