@@ -43,7 +43,7 @@
     "@semantic-release/github": "2.2.3",
     "@semantic-release/npm": "2.5.0",
     "@types/lodash": "4.14.91",
-    "@types/mocha": "2.2.44",
+    "@types/mocha": "2.2.45",
     "@types/node": "8.5.2",
     "assert": "1.4.1",
     "commitizen": "2.9.6",
