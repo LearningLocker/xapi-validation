@@ -44,7 +44,7 @@
     "@semantic-release/npm": "2.6.1",
     "@types/lodash": "4.14.91",
     "@types/mocha": "2.2.45",
-    "@types/node": "8.5.2",
+    "@types/node": "8.5.5",
     "assert": "1.4.1",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
