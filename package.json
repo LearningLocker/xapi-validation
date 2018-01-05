@@ -1,5 +1,5 @@
 {
-  "name": "xapi-validation",
+  "name": "@learninglocker/xapi-validation",
   "version": "0.0.0-development",
   "description": "Validation library for the xAPI.",
   "main": "dist/index.js",
@@ -24,12 +24,6 @@
     "duplication": "jscpd",
     "semantic-release": "semantic-release"
   },
-  "release": {
-    "verifyConditions": [
-      "@semantic-release/github",
-      "@semantic-release/npm"
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -40,8 +34,7 @@
     "rulr": "^4.0.1"
   },
   "devDependencies": {
-    "@semantic-release/github": "3.0.1",
-    "@semantic-release/npm": "2.6.1",
+    "@ht2-labs/semantic-release": "1.0.21",
     "@types/lodash": "4.14.92",
     "@types/mocha": "2.2.46",
     "@types/node": "8.5.5",
@@ -52,8 +45,10 @@
     "mocha": "4.1.0",
     "nyc": "11.4.1",
     "rimraf": "2.6.2",
-    "semantic-release": "11.0.2",
     "tslint": "5.8.0",
     "typescript": "2.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
