@@ -22,7 +22,7 @@
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
     "duplication": "jscpd",
-    "semantic-release": "semantic-release"
+    "semantic-release": "ht2-release-public-circleci-lib"
   },
   "config": {
     "commitizen": {
