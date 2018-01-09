@@ -1,3 +1,6 @@
+import * as sourceMapSupport from 'source-map-support';
+sourceMapSupport.install();
+
 import * as assert from 'assert';
 import validateStatement from './index';
 import { statement } from './tests/factory';

@@ -18,7 +18,7 @@
     "commit": "git-cz",
     "build": "tsc",
     "test": "mocha dist/**/*.test.js --exit",
-    "cover": "nyc --lines 95 --check-coverage npm run test",
+    "cover": "nyc --lines 100 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
     "duplication": "jscpd",
@@ -31,13 +31,15 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "rulr": "^4.0.1"
+    "rulr": "^4.0.1",
+    "source-map-support": "^0.5.0"
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.0.21",
     "@types/lodash": "4.14.92",
     "@types/mocha": "2.2.46",
     "@types/node": "9.3.0",
+    "@types/source-map-support": "0.4.0",
     "assert": "1.4.1",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
