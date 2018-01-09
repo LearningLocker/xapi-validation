@@ -19,4 +19,8 @@ export default (test: Test) => {
   itsValid('ftp://foo.bar/baz', test);
   itsValid('http://⌘➡例子.测试✪उदाहरण.परीकإختبار/䨹', test);
   itsValid('http://-.~_!$&\'()*+,;=:%40:80%2f::::::@example.com', test);
+  itsValid('http://www.example.com/fgdfgd?sdfsdfsdf#fgdgdfg', test);
+
+  // tslint:disable-next-line:max-line-length
+  itsValid('http://some.large.test.string.for.regex/some-large-string/string.html?largeString=largeString&someStrangeText=%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D1%82%D1%83%D0%B1%D0%B5%D1%80%D0%BA%D1%83%D0%BB%D0%B5%D0%B7', test);
 };
