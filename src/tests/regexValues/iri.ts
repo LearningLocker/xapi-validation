@@ -23,4 +23,9 @@ export default (test: Test) => {
 
   // tslint:disable-next-line:max-line-length
   itsValid('http://some.large.test.string.for.regex/some-large-string/string.html?largeString=largeString&someStrangeText=%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D1%82%D1%83%D0%B1%D0%B5%D1%80%D0%BA%D1%83%D0%BB%D0%B5%D0%B7', test);
+  itsValid('https://some.strange.test/tests/very-strange-test-that-hangs-regex/test#test/test"', test);
+
+  // Tests from the conformance suite.
+  itsInvalid('ab=c://should.fail.com', 'not an IRI', test);
+  itsInvalid('not.a.valid.iri.com/verb', 'not an IRI', test);
 };
