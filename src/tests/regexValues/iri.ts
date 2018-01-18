@@ -28,4 +28,8 @@ export default (test: Test) => {
   // Tests from the conformance suite.
   itsInvalid('ab=c://should.fail.com', 'not an IRI', test);
   itsInvalid('not.a.valid.iri.com/verb', 'not an IRI', test);
+
+  // LL-472
+  itsValid('urn:071b8229-c909-5d6f-b250-8cbb6f36fda7:Test:Test_0', test);
+  itsValid('urn:uuid:a4942cbb-aabf-526f-8f69-379f265416b5', test);
 };
