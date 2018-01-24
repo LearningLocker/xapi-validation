@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.0.26",
-    "@types/lodash": "4.14.94",
+    "@types/lodash": "4.14.95",
     "@types/mocha": "2.2.47",
     "@types/node": "9.3.0",
     "@types/source-map-support": "0.4.0",
