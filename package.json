@@ -44,7 +44,7 @@
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
     "mocha": "4.1.0",
-    "nyc": "11.7.3",
+    "nyc": "11.8.0",
     "rimraf": "2.6.2",
     "source-map-support": "0.5.6",
     "tslint": "5.10.0",
