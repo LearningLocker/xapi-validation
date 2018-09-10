@@ -21,7 +21,7 @@
     "cover": "nyc --lines 100 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
-    "duplication": "jscpd",
+    "duplication": "jscpd --limit 1.0",
     "semantic-release": "ht2-release-public-circleci-lib"
   },
   "config": {
@@ -42,7 +42,7 @@
     "assert": "1.4.1",
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
-    "jscpd": "0.6.22",
+    "jscpd": "0.6.23",
     "mocha": "4.1.0",
     "nyc": "11.9.0",
     "rimraf": "2.6.2",
