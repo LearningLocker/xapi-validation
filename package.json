@@ -21,7 +21,7 @@
     "cover": "nyc --lines 100 --check-coverage npm run test",
     "clean": "rimraf dist",
     "lint": "tslint --project ./tsconfig.json -c ./tslint.json",
-    "duplication": "jscpd --limit 1",
+    "duplication": "jscpd --limit 1.0",
     "semantic-release": "ht2-release-public-circleci-lib"
   },
   "config": {
