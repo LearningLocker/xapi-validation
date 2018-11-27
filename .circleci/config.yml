@@ -6,7 +6,7 @@ machine:
 jobs:
   build:
     docker:
-      - image: node:8.13.0@sha256:85778ad8487fcb82e2d455078dae99628cc06c093c840463a84529d069fcca1b
+      - image: node:8.13.0@sha256:3ecf259bf23f8a75555cf0b92ac5ad3c746e7e2262e937a9bed9ca1685f8e1c7
     environment:
       - NPM_CONFIG_LOGLEVEL: warn
     working_directory: ~/repo
