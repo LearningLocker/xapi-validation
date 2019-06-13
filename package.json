@@ -48,7 +48,7 @@
     "rimraf": "2.6.3",
     "source-map-support": "0.5.12",
     "tslint": "5.17.0",
-    "typescript": "3.5.1"
+    "typescript": "3.5.2"
   },
   "publishConfig": {
     "access": "public"
