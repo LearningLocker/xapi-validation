@@ -47,7 +47,7 @@
     "nyc": "11.9.0",
     "rimraf": "2.7.1",
     "source-map-support": "0.5.13",
-    "tslint": "5.19.0",
+    "tslint": "6.1.3",
     "typescript": "3.9.5"
   },
   "publishConfig": {
