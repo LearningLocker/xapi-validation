@@ -5,8 +5,13 @@ machine:
 
 jobs:
   build:
+    context:
+      - docker-hub-creds
     docker:
       - image: node:10
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     environment:
       - NPM_CONFIG_LOGLEVEL: warn
     working_directory: ~/repo
