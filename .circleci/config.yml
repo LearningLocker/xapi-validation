@@ -1,12 +1,16 @@
-version: 2
+version: 2.1
 machine:
   services:
     - docker
 
+workflows:
+  xapi-validation:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
 jobs:
   build:
-    context:
-      - docker-hub-creds
     docker:
       - image: node:10
         auth:
