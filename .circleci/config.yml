@@ -3,12 +3,6 @@ machine:
   services:
     - docker
 
-workflows:
-  xapi-validation:
-    jobs:
-      - build:
-          context:
-            - docker-hub-creds
 jobs:
   build:
     docker:
@@ -51,3 +45,10 @@ jobs:
       - deploy:
           name: Semantic Release
           command: npm run semantic-release
+
+workflows:
+  xapi-validation:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
