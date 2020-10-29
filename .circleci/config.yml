@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 machine:
   services:
     - docker
@@ -7,6 +7,9 @@ jobs:
   build:
     docker:
       - image: node:10
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     environment:
       - NPM_CONFIG_LOGLEVEL: warn
     working_directory: ~/repo
@@ -42,3 +45,10 @@ jobs:
       - deploy:
           name: Semantic Release
           command: npm run semantic-release
+
+workflows:
+  build:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
