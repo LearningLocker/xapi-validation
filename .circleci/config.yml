@@ -47,7 +47,7 @@ jobs:
           command: npm run semantic-release
 
 workflows:
-  xapi-validation:
+  build:
     jobs:
       - build:
           context:
