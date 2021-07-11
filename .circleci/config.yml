@@ -6,7 +6,7 @@ machine:
 jobs:
   build:
     docker:
-      - image: node:12
+      - image: node:16
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
