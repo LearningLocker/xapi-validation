@@ -1,0 +1,114 @@
+name: Integration Suite
+
+on: ['push']
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - id: "auto_commit_action"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: |
+            ci(lint): Github Action Lint.
+          file_pattern: src/*
+
+  build:
+    if: needs.lint.outputs.changes_commited == false
+
+    name: Build Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run build
+
+  duplication:
+    if: needs.lint.outputs.changes_commited == false
+
+    name: Checking Code Duplication
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run duplication
+
+  test:
+    if: needs.lint.outputs.changes_commited == false
+    needs: ['lint']
+
+    name: Test/Unit
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run cover
+
+  release:
+    if: github.ref == 'refs/heads/master'
+    needs: ['build', 'test']
+
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
