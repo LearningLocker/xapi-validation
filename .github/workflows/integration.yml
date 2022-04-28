@@ -19,17 +19,23 @@ jobs:
           node-version: "14"
           cache: 'npm'
 
-      - run: npm ci
+      - name: Installing Dependencies
+        run: npm ci
 
-      - run: npm run build
+      - name: Compiling Code
+        run: npm run build
 
-      - run: npm run cover
+      - name: Running Tests
+        run: npm run cover
 
-      - run: npm run lint
+      - name: Linting Code
+        run: npm run lint
 
-      - run: npm run duplication
+      - name: Checking for Duplication
+        run: npm run duplication
 
-      - if: github.ref == 'refs/heads/master'
+      - name: Semantic Release
+        if: github.ref == 'refs/heads/master'
         run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
