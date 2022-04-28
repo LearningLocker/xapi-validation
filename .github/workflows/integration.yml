@@ -1,0 +1,41 @@
+name: Integration Suite
+
+on: ['push']
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  integrate:
+    name: Integration
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - name: Installing Dependencies
+        run: npm ci
+
+      - name: Compiling Code
+        run: npm run build
+
+      - name: Running Tests
+        run: npm run cover
+
+      - name: Linting Code
+        run: npm run lint
+
+      - name: Checking for Duplication
+        run: npm run duplication
+
+      - name: Semantic Release
+        if: github.ref == 'refs/heads/master'
+        run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
