@@ -90,6 +90,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm ci build
+
       - run: npm run cover
 
   release:
