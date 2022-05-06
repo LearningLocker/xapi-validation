@@ -39,3 +39,4 @@ jobs:
         run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
