@@ -30,6 +30,10 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "engines": {
+    "node": ">16.0.0",
+    "npm": ">8.0.0"
+  },
   "dependencies": {
     "lodash": "^4.17.10",
     "rulr": "^4.0.1"
