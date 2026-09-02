@@ -44,7 +44,7 @@
     "@types/mocha": "2.2.48",
     "@types/node": "9.6.61",
     "@types/source-map-support": "0.5.4",
-    "assert": "1.5.0",
+    "assert": "2.1.0",
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.25",
